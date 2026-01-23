@@ -31,5 +31,5 @@ Set up the foundational project structure using Next.js App Router, TypeScript i
 ## Final Summary
 
 <!-- SECTION:FINAL_SUMMARY:BEGIN -->
-Project initialized with Next.js 16.1.4 (App Router), TypeScript strict mode, Tailwind CSS 4, ESLint with next/core-web-vitals and typescript configs, and Prettier. Dev server runs successfully on port 3000.
+Project initialized with Next.js 16.1.4 (App Router), TypeScript strict mode, Tailwind CSS 4, ESLint, and Prettier.
 <!-- SECTION:FINAL_SUMMARY:END -->
