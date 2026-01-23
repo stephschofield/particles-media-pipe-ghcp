@@ -5,7 +5,7 @@ status: In Progress
 assignee:
   - '@copilot'
 created_date: '2026-01-23 07:49'
-updated_date: '2026-01-23 15:23'
+updated_date: '2026-01-23 15:25'
 labels:
   - ui
   - camera
@@ -22,11 +22,11 @@ Create a 256x144 camera preview box positioned at top center of the screen, disp
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
-- [ ] #1 Camera preview positioned at top center
-- [ ] #2 Fixed size of 256x144 pixels
-- [ ] #3 Camera feed is mirrored horizontally
-- [ ] #4 Preview has subtle border and rounded corners
-- [ ] #5 Video stream properly managed with cleanup on unmount
+- [x] #1 Camera preview positioned at top center
+- [x] #2 Fixed size of 256x144 pixels
+- [x] #3 Camera feed is mirrored horizontally
+- [x] #4 Preview has subtle border and rounded corners
+- [x] #5 Video stream properly managed with cleanup on unmount
 <!-- AC:END -->
 
 ## Implementation Plan
