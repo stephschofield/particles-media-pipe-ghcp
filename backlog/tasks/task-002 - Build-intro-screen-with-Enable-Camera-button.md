@@ -28,3 +28,14 @@ Create the landing experience with a clean, minimal intro screen featuring a pro
 - [ ] #4 Smooth transition to particle canvas on permission granted
 - [ ] #5 Error handling for permission denied
 <!-- AC:END -->
+
+## Implementation Plan
+
+<!-- SECTION:PLAN:BEGIN -->
+1. Create IntroScreen client component with centered layout
+2. Build EnableCameraButton with glassmorphism styling and hover states
+3. Implement camera permission request via getUserMedia
+4. Add app state management (intro → canvas transition)
+5. Handle permission denied with error UI
+6. Test all flows
+<!-- SECTION:PLAN:END -->
