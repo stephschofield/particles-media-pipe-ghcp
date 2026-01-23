@@ -4,7 +4,7 @@ title: Create fullscreen particle canvas with WebGL
 status: To Do
 assignee: []
 created_date: '2026-01-23 07:50'
-updated_date: '2026-01-23 07:52'
+updated_date: '2026-01-23 08:03'
 labels:
   - particles
   - canvas
@@ -16,7 +16,7 @@ priority: high
 ## Description
 
 <!-- SECTION:DESCRIPTION:BEGIN -->
-Build a fullscreen canvas component using WebGL or Canvas 2D for rendering 8,000 to 15,000 particles efficiently. Set up the rendering loop with requestAnimationFrame for smooth 60fps animation.
+Build a fullscreen WebGL 2 canvas optimized for 15K particle instanced rendering. Set up the render loop with requestAnimationFrame targeting 60fps. Use interleaved Float32Array (7 floats per particle: x,y,z,size,r,g,b) for cache-friendly GPU uploads. Single draw call architecture.
 <!-- SECTION:DESCRIPTION:END -->
 
 ## Acceptance Criteria
@@ -27,4 +27,10 @@ Build a fullscreen canvas component using WebGL or Canvas 2D for rendering 8,000
 - [ ] #4 Render loop runs at 60fps using requestAnimationFrame
 - [ ] #5 Particle buffer can handle 15,000 particles
 - [ ] #6 Canvas layered behind camera preview
+- [ ] #7 WebGL 2 context with instancing extension
+- [ ] #8 Interleaved Float32Array buffer (7 floats/particle = 420KB)
+- [ ] #9 Single draw call renders all 15K particles
+- [ ] #10 Fullscreen canvas with proper resize handling
+- [ ] #11 60fps render loop with frame time monitoring
+- [ ] #12 Fallback detection for WebGL 2 unavailable
 <!-- AC:END -->
