@@ -4,10 +4,12 @@ title: Add keyboard shortcuts panel in bottom right
 status: To Do
 assignee: []
 created_date: '2026-01-23 07:51'
+updated_date: '2026-01-23 07:53'
 labels:
   - ui
   - help
-dependencies: []
+dependencies:
+  - TASK-001
 priority: low
 ---
 
