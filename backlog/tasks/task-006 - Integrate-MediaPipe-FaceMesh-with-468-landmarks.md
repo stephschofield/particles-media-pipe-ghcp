@@ -1,10 +1,11 @@
 ---
 id: TASK-006
 title: Integrate MediaPipe FaceMesh with 468 landmarks
-status: To Do
-assignee: []
+status: In Progress
+assignee:
+  - '@copilot'
 created_date: '2026-01-23 07:49'
-updated_date: '2026-01-23 07:52'
+updated_date: '2026-01-23 16:01'
 labels:
   - mediapipe
   - tracking
@@ -28,3 +29,14 @@ Set up MediaPipe FaceMesh solution with all 468 face landmarks and refined featu
 - [ ] #5 Landmark data exposed via React context or hook
 - [ ] #6 Real-time performance maintained with hand tracking
 <!-- AC:END -->
+
+## Implementation Plan
+
+<!-- SECTION:PLAN:BEGIN -->
+1. Add FaceLandmarks types to types.ts
+2. Update HandTrackingProvider to include FaceLandmarker
+3. Run face detection in parallel with hand detection
+4. Configure with refineLandmarks for eyes/lips
+5. Update status indicator to show face detection
+6. Verify 60 FPS with both hand + face tracking
+<!-- SECTION:PLAN:END -->
