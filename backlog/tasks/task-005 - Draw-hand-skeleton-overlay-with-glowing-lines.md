@@ -4,7 +4,7 @@ title: Draw hand skeleton overlay with glowing lines
 status: To Do
 assignee: []
 created_date: '2026-01-23 07:49'
-updated_date: '2026-01-23 07:52'
+updated_date: '2026-01-23 15:58'
 labels:
   - visualization
   - canvas
@@ -22,10 +22,10 @@ Render a skeleton overlay on the camera preview showing hand bones. Use cyan for
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
-- [ ] #1 Skeleton lines connect correct joint pairs
-- [ ] #2 Cyan glow for left hand, pink glow for right hand
-- [ ] #3 Larger dots rendered at 5 fingertips per hand
-- [ ] #4 Larger dot at wrist landmark
-- [ ] #5 Lines have glow effect using canvas shadow or blur
-- [ ] #6 Overlay properly scales to 256x144 preview
+- [x] #1 Skeleton lines connect correct joint pairs
+- [x] #2 Cyan glow for left hand, pink glow for right hand
+- [x] #3 Larger dots rendered at 5 fingertips per hand
+- [x] #4 Larger dot at wrist landmark
+- [x] #5 Lines have glow effect using canvas shadow or blur
+- [x] #6 Overlay properly scales to 256x144 preview
 <!-- AC:END -->
