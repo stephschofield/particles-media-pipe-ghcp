@@ -4,10 +4,12 @@ title: Add particle trails with semi-transparent fade
 status: To Do
 assignee: []
 created_date: '2026-01-23 07:51'
+updated_date: '2026-01-23 07:53'
 labels:
   - particles
   - effects
-dependencies: []
+dependencies:
+  - TASK-009
 priority: medium
 ---
 
