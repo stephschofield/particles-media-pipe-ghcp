@@ -4,10 +4,13 @@ title: Implement face particle distribution with tight clustering
 status: To Do
 assignee: []
 created_date: '2026-01-23 07:50'
+updated_date: '2026-01-23 07:52'
 labels:
   - particles
   - face
-dependencies: []
+dependencies:
+  - TASK-009
+  - TASK-006
 priority: medium
 ---
 
