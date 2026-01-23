@@ -1,10 +1,11 @@
 ---
 id: TASK-003
 title: Implement camera preview overlay component
-status: To Do
-assignee: []
+status: In Progress
+assignee:
+  - '@copilot'
 created_date: '2026-01-23 07:49'
-updated_date: '2026-01-23 07:52'
+updated_date: '2026-01-23 15:23'
 labels:
   - ui
   - camera
