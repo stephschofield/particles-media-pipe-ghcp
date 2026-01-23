@@ -1,10 +1,11 @@
 ---
 id: TASK-008
 title: Create fullscreen particle canvas with WebGL
-status: To Do
-assignee: []
+status: In Progress
+assignee:
+  - '@copilot'
 created_date: '2026-01-23 07:50'
-updated_date: '2026-01-23 08:03'
+updated_date: '2026-01-23 16:29'
 labels:
   - particles
   - canvas
@@ -34,3 +35,16 @@ Build a fullscreen WebGL 2 canvas optimized for 15K particle instanced rendering
 - [ ] #11 60fps render loop with frame time monitoring
 - [ ] #12 Fallback detection for WebGL 2 unavailable
 <!-- AC:END -->
+
+## Implementation Plan
+
+<!-- SECTION:PLAN:BEGIN -->
+1. Create ParticleCanvas component with WebGL 2 context
+2. Set up fullscreen canvas with viewport matching
+3. Initialize interleaved Float32Array buffer (7 floats × 15K)
+4. Create vertex/fragment shaders for instanced rendering
+5. Set up requestAnimationFrame render loop at 60 FPS
+6. Add window resize handler
+7. Implement WebGL 2 fallback detection
+8. Integrate into page.tsx behind camera preview
+<!-- SECTION:PLAN:END -->
