@@ -4,10 +4,13 @@ title: Build mode toggle buttons in top left
 status: To Do
 assignee: []
 created_date: '2026-01-23 07:51'
+updated_date: '2026-01-23 07:53'
 labels:
   - ui
   - controls
-dependencies: []
+dependencies:
+  - TASK-001
+  - TASK-015
 priority: medium
 ---
 
