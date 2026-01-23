@@ -1,9 +1,11 @@
 ---
 id: TASK-001
 title: Initialize Next.js project with TypeScript and Tailwind
-status: To Do
-assignee: []
+status: In Progress
+assignee:
+  - '@developer'
 created_date: '2026-01-23 07:48'
+updated_date: '2026-01-23 08:05'
 labels:
   - setup
   - infrastructure
