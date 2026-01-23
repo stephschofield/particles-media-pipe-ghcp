@@ -39,3 +39,4 @@ coverage/
 *.tmp
 *.temp
 .cache/
+# Test Results\n\ntest-results/\nplaywright-report/\nplaywright/.cache/

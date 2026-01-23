@@ -2,6 +2,7 @@
 
 import { useRef, useEffect } from "react";
 import { useHandTracking } from "@/lib/HandTrackingProvider";
+import { HandSkeleton } from "./HandSkeleton";
 
 interface CameraPreviewProps {
   stream: MediaStream;
@@ -21,14 +22,20 @@ export function CameraPreview({
     const video = videoRef.current;
     if (!video) return;
 
+    let isMounted = true;
+
     video.srcObject = stream;
     video.play().catch((error) => {
+      // Ignore AbortError - happens when component remounts in StrictMode
+      if (error.name === "AbortError") return;
       console.error("Error playing video:", error);
     });
 
     // Start hand tracking when video is ready
     const handleLoadedData = () => {
-      startTracking(video);
+      if (isMounted) {
+        startTracking(video);
+      }
     };
 
     video.addEventListener("loadeddata", handleLoadedData);
@@ -39,6 +46,7 @@ export function CameraPreview({
     }
 
     return () => {
+      isMounted = false;
       video.removeEventListener("loadeddata", handleLoadedData);
       stopTracking();
       video.srcObject = null;
@@ -66,6 +74,8 @@ export function CameraPreview({
           transform: "scaleX(-1)", // Mirror horizontally
         }}
       />
+      {/* Hand skeleton overlay */}
+      <HandSkeleton width={width} height={height} />
     </div>
   );
 }
