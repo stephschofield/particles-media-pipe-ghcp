@@ -4,10 +4,13 @@ title: Implement fist gesture detection for theme cycling
 status: To Do
 assignee: []
 created_date: '2026-01-23 07:51'
+updated_date: '2026-01-23 07:52'
 labels:
   - gestures
   - interaction
-dependencies: []
+dependencies:
+  - TASK-004
+  - TASK-012
 priority: medium
 ---
 
