@@ -5,7 +5,7 @@ status: In Progress
 assignee:
   - '@copilot'
 created_date: '2026-01-23 07:49'
-updated_date: '2026-01-23 15:30'
+updated_date: '2026-01-23 15:41'
 labels:
   - mediapipe
   - tracking
@@ -22,12 +22,12 @@ Set up MediaPipe Hands solution to detect up to 2 hands with all 21 landmarks pe
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
-- [ ] #1 MediaPipe Hands SDK installed and configured
-- [ ] #2 Detects up to 2 hands simultaneously
-- [ ] #3 All 21 landmarks per hand are tracked
-- [ ] #4 Landmark data exposed via React context or hook
-- [ ] #5 Graceful handling when no hands detected
-- [ ] #6 Real-time performance at 60 FPS
+- [x] #1 MediaPipe Hands SDK installed and configured
+- [x] #2 Detects up to 2 hands simultaneously
+- [x] #3 All 21 landmarks per hand are tracked
+- [x] #4 Landmark data exposed via React context or hook
+- [x] #5 Graceful handling when no hands detected
+- [x] #6 Real-time performance at 60 FPS
 <!-- AC:END -->
 
 ## Implementation Plan
