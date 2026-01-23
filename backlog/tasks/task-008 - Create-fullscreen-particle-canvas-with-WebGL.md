@@ -5,7 +5,7 @@ status: In Progress
 assignee:
   - '@copilot'
 created_date: '2026-01-23 07:50'
-updated_date: '2026-01-23 16:29'
+updated_date: '2026-01-23 16:43'
 labels:
   - particles
   - canvas
@@ -22,18 +22,18 @@ Build a fullscreen WebGL 2 canvas optimized for 15K particle instanced rendering
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
-- [ ] #1 Fullscreen canvas covers entire viewport
-- [ ] #2 Canvas resizes properly on window resize
-- [ ] #3 WebGL context initialized with fallback to Canvas 2D
-- [ ] #4 Render loop runs at 60fps using requestAnimationFrame
-- [ ] #5 Particle buffer can handle 15,000 particles
-- [ ] #6 Canvas layered behind camera preview
-- [ ] #7 WebGL 2 context with instancing extension
-- [ ] #8 Interleaved Float32Array buffer (7 floats/particle = 420KB)
-- [ ] #9 Single draw call renders all 15K particles
-- [ ] #10 Fullscreen canvas with proper resize handling
-- [ ] #11 60fps render loop with frame time monitoring
-- [ ] #12 Fallback detection for WebGL 2 unavailable
+- [x] #1 Fullscreen canvas covers entire viewport
+- [x] #2 Canvas resizes properly on window resize
+- [x] #3 WebGL context initialized with fallback to Canvas 2D
+- [x] #4 Render loop runs at 60fps using requestAnimationFrame
+- [x] #5 Particle buffer can handle 15,000 particles
+- [x] #6 Canvas layered behind camera preview
+- [x] #7 WebGL 2 context with instancing extension
+- [x] #8 Interleaved Float32Array buffer (7 floats/particle = 420KB)
+- [x] #9 Single draw call renders all 15K particles
+- [x] #10 Fullscreen canvas with proper resize handling
+- [x] #11 60fps render loop with frame time monitoring
+- [x] #12 Fallback detection for WebGL 2 unavailable
 <!-- AC:END -->
 
 ## Implementation Plan
