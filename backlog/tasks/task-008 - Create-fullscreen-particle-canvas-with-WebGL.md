@@ -4,10 +4,12 @@ title: Create fullscreen particle canvas with WebGL
 status: To Do
 assignee: []
 created_date: '2026-01-23 07:50'
+updated_date: '2026-01-23 07:52'
 labels:
   - particles
   - canvas
-dependencies: []
+dependencies:
+  - TASK-001
 priority: high
 ---
 
