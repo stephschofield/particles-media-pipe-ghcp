@@ -28,3 +28,14 @@ Create a 256x144 camera preview box positioned at top center of the screen, disp
 - [ ] #4 Preview has subtle border and rounded corners
 - [ ] #5 Video stream properly managed with cleanup on unmount
 <!-- AC:END -->
+
+## Implementation Plan
+
+<!-- SECTION:PLAN:BEGIN -->
+1. Create CameraPreview component with video element
+2. Implement mirrored video stream with proper sizing (256x144)
+3. Style with glassmorphism border and rounded corners
+4. Add proper cleanup on unmount
+5. Export from components index
+6. Integrate into page.tsx for canvas view
+<!-- SECTION:PLAN:END -->
