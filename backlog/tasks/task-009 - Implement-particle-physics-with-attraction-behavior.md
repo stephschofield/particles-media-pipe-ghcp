@@ -4,10 +4,12 @@ title: Implement particle physics with attraction behavior
 status: To Do
 assignee: []
 created_date: '2026-01-23 07:50'
+updated_date: '2026-01-23 07:52'
 labels:
   - particles
   - physics
-dependencies: []
+dependencies:
+  - TASK-008
 priority: high
 ---
 
