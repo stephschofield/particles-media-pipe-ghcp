@@ -4,10 +4,12 @@ title: Add 5 color themes with cycling support
 status: To Do
 assignee: []
 created_date: '2026-01-23 07:50'
+updated_date: '2026-01-23 07:52'
 labels:
   - themes
   - particles
-dependencies: []
+dependencies:
+  - TASK-009
 priority: medium
 ---
 
