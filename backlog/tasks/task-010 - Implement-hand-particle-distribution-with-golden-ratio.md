@@ -4,10 +4,13 @@ title: Implement hand particle distribution with golden ratio
 status: To Do
 assignee: []
 created_date: '2026-01-23 07:50'
+updated_date: '2026-01-23 07:52'
 labels:
   - particles
   - hands
-dependencies: []
+dependencies:
+  - TASK-009
+  - TASK-004
 priority: medium
 ---
 
