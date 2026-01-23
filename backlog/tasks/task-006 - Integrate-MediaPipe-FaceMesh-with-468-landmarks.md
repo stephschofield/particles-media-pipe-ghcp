@@ -4,10 +4,12 @@ title: Integrate MediaPipe FaceMesh with 468 landmarks
 status: To Do
 assignee: []
 created_date: '2026-01-23 07:49'
+updated_date: '2026-01-23 07:52'
 labels:
   - mediapipe
   - tracking
-dependencies: []
+dependencies:
+  - TASK-001
 priority: high
 ---
 
