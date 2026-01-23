@@ -3,6 +3,7 @@
 import { useRef, useEffect } from "react";
 import { useHandTracking } from "@/lib/HandTrackingProvider";
 import { HandSkeleton } from "./HandSkeleton";
+import { FaceMesh } from "./FaceMesh";
 
 interface CameraPreviewProps {
   stream: MediaStream;
@@ -76,6 +77,8 @@ export function CameraPreview({
       />
       {/* Hand skeleton overlay */}
       <HandSkeleton width={width} height={height} />
+      {/* Face mesh overlay */}
+      <FaceMesh width={width} height={height} />
     </div>
   );
 }
