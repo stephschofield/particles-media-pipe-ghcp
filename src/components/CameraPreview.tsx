@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useEffect } from "react";
+import { useHandTracking } from "@/lib/HandTrackingProvider";
 
 interface CameraPreviewProps {
   stream: MediaStream;
@@ -14,6 +15,7 @@ export function CameraPreview({
   height = 144 
 }: CameraPreviewProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const { startTracking, stopTracking } = useHandTracking();
 
   useEffect(() => {
     const video = videoRef.current;
@@ -24,10 +26,24 @@ export function CameraPreview({
       console.error("Error playing video:", error);
     });
 
+    // Start hand tracking when video is ready
+    const handleLoadedData = () => {
+      startTracking(video);
+    };
+
+    video.addEventListener("loadeddata", handleLoadedData);
+
+    // If already loaded, start immediately
+    if (video.readyState >= 2) {
+      startTracking(video);
+    }
+
     return () => {
+      video.removeEventListener("loadeddata", handleLoadedData);
+      stopTracking();
       video.srcObject = null;
     };
-  }, [stream]);
+  }, [stream, startTracking, stopTracking]);
 
   return (
     <div
