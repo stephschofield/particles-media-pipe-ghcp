@@ -13,12 +13,21 @@ function CanvasView({ stream }: { stream: MediaStream }) {
   const getStatusText = () => {
     if (isLoading) return "Loading AI models...";
     if (error) return `Error: ${error}`;
-    if (!result || result.hands.length === 0) return "Show your hands 👋";
+    if (!result) return "Show your hands 👋";
     
+    const parts: string[] = [];
     const handCount = result.hands.length;
-    const handText = handCount === 1 ? "1 hand" : "2 hands";
-    return `${handText} detected`;
+    
+    if (handCount === 1) parts.push("1 hand");
+    else if (handCount === 2) parts.push("2 hands");
+    
+    if (result.face) parts.push("face");
+    
+    if (parts.length === 0) return "Show your hands 👋";
+    return `${parts.join(" + ")} detected`;
   };
+
+  const isDetecting = result && (result.hands.length > 0 || result.face !== null);
 
   return (
     <div className="fixed inset-0 bg-black">
@@ -38,12 +47,10 @@ function CanvasView({ stream }: { stream: MediaStream }) {
         <p
           className="font-mono text-sm"
           style={{
-            color: result && result.hands.length > 0 ? "#22C55E" : "#71717A",
+            color: isDetecting ? "#22C55E" : "#71717A",
           }}
         >
-          {result && result.hands.length > 0 && (
-            <span className="mr-2">●</span>
-          )}
+          {isDetecting && <span className="mr-2">●</span>}
           {getStatusText()}
         </p>
       </div>

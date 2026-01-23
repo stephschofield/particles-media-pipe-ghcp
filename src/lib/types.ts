@@ -15,6 +15,17 @@ export interface HandLandmarks {
   handedness: "Left" | "Right";
 }
 
+export interface FaceLandmarks {
+  landmarks: Landmark[];
+}
+
+export interface TrackingResult {
+  hands: HandLandmarks[];
+  face: FaceLandmarks | null;
+  timestamp: number;
+}
+
+// Deprecated: kept for backward compatibility
 export interface HandTrackingResult {
   hands: HandLandmarks[];
   timestamp: number;

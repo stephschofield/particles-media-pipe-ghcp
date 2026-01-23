@@ -11,13 +11,15 @@ import {
 } from "react";
 import {
   HandLandmarker,
+  FaceLandmarker,
   FilesetResolver,
   type HandLandmarkerResult,
+  type FaceLandmarkerResult,
 } from "@mediapipe/tasks-vision";
-import type { HandLandmarks, HandTrackingResult, Landmark } from "@/lib/types";
+import type { HandLandmarks, TrackingResult, FaceLandmarks, Landmark } from "@/lib/types";
 
 interface HandTrackingContextValue {
-  result: HandTrackingResult | null;
+  result: TrackingResult | null;
   isLoading: boolean;
   error: string | null;
   startTracking: (video: HTMLVideoElement) => void;
@@ -31,11 +33,12 @@ interface HandTrackingProviderProps {
 }
 
 export function HandTrackingProvider({ children }: HandTrackingProviderProps) {
-  const [result, setResult] = useState<HandTrackingResult | null>(null);
+  const [result, setResult] = useState<TrackingResult | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const handLandmarkerRef = useRef<HandLandmarker | null>(null);
+  const faceLandmarkerRef = useRef<FaceLandmarker | null>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const animationFrameRef = useRef<number | null>(null);
   const lastTimestampRef = useRef<number>(-1);
@@ -43,9 +46,6 @@ export function HandTrackingProvider({ children }: HandTrackingProviderProps) {
   // Initialize MediaPipe HandLandmarker
   const initializeHandLandmarker = useCallback(async () => {
     try {
-      setIsLoading(true);
-      setError(null);
-
       const vision = await FilesetResolver.forVisionTasks(
         "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@latest/wasm"
       );
@@ -54,7 +54,7 @@ export function HandTrackingProvider({ children }: HandTrackingProviderProps) {
         baseOptions: {
           modelAssetPath:
             "https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task",
-          delegate: "GPU", // Use GPU for better performance
+          delegate: "GPU",
         },
         runningMode: "VIDEO",
         numHands: 2,
@@ -64,41 +64,85 @@ export function HandTrackingProvider({ children }: HandTrackingProviderProps) {
       });
 
       handLandmarkerRef.current = handLandmarker;
-      setIsLoading(false);
-
       return handLandmarker;
     } catch (err) {
-      const message = err instanceof Error ? err.message : "Failed to initialize hand tracking";
-      setError(message);
-      setIsLoading(false);
       console.error("HandLandmarker initialization error:", err);
       return null;
     }
   }, []);
 
-  // Convert MediaPipe result to our format
-  const convertResult = useCallback(
-    (mpResult: HandLandmarkerResult, timestamp: number): HandTrackingResult => {
+  // Initialize MediaPipe FaceLandmarker
+  const initializeFaceLandmarker = useCallback(async () => {
+    try {
+      const vision = await FilesetResolver.forVisionTasks(
+        "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@latest/wasm"
+      );
+
+      const faceLandmarker = await FaceLandmarker.createFromOptions(vision, {
+        baseOptions: {
+          modelAssetPath:
+            "https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/1/face_landmarker.task",
+          delegate: "GPU",
+        },
+        runningMode: "VIDEO",
+        numFaces: 1,
+        minFaceDetectionConfidence: 0.5,
+        minFacePresenceConfidence: 0.5,
+        minTrackingConfidence: 0.5,
+        outputFaceBlendshapes: false,
+        outputFacialTransformationMatrixes: false,
+      });
+
+      faceLandmarkerRef.current = faceLandmarker;
+      return faceLandmarker;
+    } catch (err) {
+      console.error("FaceLandmarker initialization error:", err);
+      return null;
+    }
+  }, []);
+
+  // Initialize both trackers
+  const initializeTrackers = useCallback(async () => {
+    setIsLoading(true);
+    setError(null);
+
+    const [handLandmarker, faceLandmarker] = await Promise.all([
+      initializeHandLandmarker(),
+      initializeFaceLandmarker(),
+    ]);
+
+    if (!handLandmarker || !faceLandmarker) {
+      setError("Failed to initialize tracking models");
+    }
+
+    setIsLoading(false);
+  }, [initializeHandLandmarker, initializeFaceLandmarker]);
+
+  // Convert MediaPipe results to our format
+  const convertResults = useCallback(
+    (
+      handResult: HandLandmarkerResult,
+      faceResult: FaceLandmarkerResult,
+      timestamp: number
+    ): TrackingResult => {
+      // Convert hands
       const hands: HandLandmarks[] = [];
-
-      for (let i = 0; i < mpResult.landmarks.length; i++) {
-        const landmarks: Landmark[] = mpResult.landmarks[i].map((lm) => ({
+      for (let i = 0; i < handResult.landmarks.length; i++) {
+        const landmarks: Landmark[] = handResult.landmarks[i].map((lm) => ({
           x: lm.x,
           y: lm.y,
           z: lm.z,
           visibility: lm.visibility,
         }));
 
-        const worldLandmarks: Landmark[] = mpResult.worldLandmarks[i].map((lm) => ({
+        const worldLandmarks: Landmark[] = handResult.worldLandmarks[i].map((lm) => ({
           x: lm.x,
           y: lm.y,
           z: lm.z,
           visibility: lm.visibility,
         }));
 
-        // Determine handedness - MediaPipe reports from camera's perspective
-        // We mirror the video, so we need to flip the handedness
-        const rawHandedness = mpResult.handednesses[i][0].categoryName;
+        const rawHandedness = handResult.handednesses[i][0].categoryName;
         const handedness = rawHandedness === "Left" ? "Right" : "Left";
 
         hands.push({
@@ -108,7 +152,20 @@ export function HandTrackingProvider({ children }: HandTrackingProviderProps) {
         });
       }
 
-      return { hands, timestamp };
+      // Convert face
+      let face: FaceLandmarks | null = null;
+      if (faceResult.faceLandmarks && faceResult.faceLandmarks.length > 0) {
+        const landmarks: Landmark[] = faceResult.faceLandmarks[0].map((lm) => ({
+          x: lm.x,
+          y: lm.y,
+          z: lm.z,
+          visibility: lm.visibility,
+        }));
+
+        face = { landmarks };
+      }
+
+      return { hands, face, timestamp };
     },
     []
   );
@@ -117,29 +174,45 @@ export function HandTrackingProvider({ children }: HandTrackingProviderProps) {
   const detect = useCallback(() => {
     const video = videoRef.current;
     const handLandmarker = handLandmarkerRef.current;
+    const faceLandmarker = faceLandmarkerRef.current;
 
-    if (!video || !handLandmarker || video.readyState < 2) {
+    if (!video || !handLandmarker || !faceLandmarker || video.readyState < 2) {
       animationFrameRef.current = requestAnimationFrame(detect);
       return;
     }
 
     const timestamp = performance.now();
 
-    // Only process if enough time has passed (avoid duplicate frames)
+    // Only process if enough time has passed
     if (timestamp !== lastTimestampRef.current) {
       lastTimestampRef.current = timestamp;
 
       try {
-        const mpResult = handLandmarker.detectForVideo(video, timestamp);
-        const trackingResult = convertResult(mpResult, timestamp);
+        // Run both detections
+        const handResult = handLandmarker.detectForVideo(video, timestamp);
+        
+        // Face detection might fail, so wrap it separately
+        let faceResult: FaceLandmarkerResult;
+        try {
+          faceResult = faceLandmarker.detectForVideo(video, timestamp);
+        } catch (faceError) {
+          // Face detection failed, create empty result
+          faceResult = {
+            faceLandmarks: [],
+            faceBlendshapes: [],
+            facialTransformationMatrixes: [],
+          };
+        }
+        
+        const trackingResult = convertResults(handResult, faceResult, timestamp);
         setResult(trackingResult);
       } catch (err) {
-        console.error("Hand detection error:", err);
+        console.error("Detection error:", err);
       }
     }
 
     animationFrameRef.current = requestAnimationFrame(detect);
-  }, [convertResult]);
+  }, [convertResults]);
 
   // Start tracking
   const startTracking = useCallback(
@@ -147,9 +220,9 @@ export function HandTrackingProvider({ children }: HandTrackingProviderProps) {
       videoRef.current = video;
 
       // Initialize if not already done
-      if (!handLandmarkerRef.current) {
-        const landmarker = await initializeHandLandmarker();
-        if (!landmarker) return;
+      if (!handLandmarkerRef.current || !faceLandmarkerRef.current) {
+        await initializeTrackers();
+        if (!handLandmarkerRef.current || !faceLandmarkerRef.current) return;
       }
 
       // Start detection loop
@@ -157,7 +230,7 @@ export function HandTrackingProvider({ children }: HandTrackingProviderProps) {
         animationFrameRef.current = requestAnimationFrame(detect);
       }
     },
-    [initializeHandLandmarker, detect]
+    [initializeTrackers, detect]
   );
 
   // Stop tracking
@@ -178,6 +251,9 @@ export function HandTrackingProvider({ children }: HandTrackingProviderProps) {
       }
       if (handLandmarkerRef.current) {
         handLandmarkerRef.current.close();
+      }
+      if (faceLandmarkerRef.current) {
+        faceLandmarkerRef.current.close();
       }
     };
   }, []);
