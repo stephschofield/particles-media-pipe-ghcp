@@ -4,10 +4,12 @@ title: Implement camera preview overlay component
 status: To Do
 assignee: []
 created_date: '2026-01-23 07:49'
+updated_date: '2026-01-23 07:52'
 labels:
   - ui
   - camera
-dependencies: []
+dependencies:
+  - TASK-002
 priority: high
 ---
 
