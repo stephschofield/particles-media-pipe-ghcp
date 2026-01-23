@@ -4,10 +4,12 @@ title: Implement Attract and Repel particle modes
 status: To Do
 assignee: []
 created_date: '2026-01-23 07:51'
+updated_date: '2026-01-23 07:53'
 labels:
   - particles
   - interaction
-dependencies: []
+dependencies:
+  - TASK-009
 priority: medium
 ---
 
