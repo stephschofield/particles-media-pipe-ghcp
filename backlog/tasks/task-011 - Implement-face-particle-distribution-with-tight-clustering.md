@@ -4,7 +4,7 @@ title: Implement face particle distribution with tight clustering
 status: To Do
 assignee: []
 created_date: '2026-01-23 07:50'
-updated_date: '2026-01-23 07:52'
+updated_date: '2026-01-23 08:04'
 labels:
   - particles
   - face
@@ -17,7 +17,7 @@ priority: medium
 ## Description
 
 <!-- SECTION:DESCRIPTION:BEGIN -->
-Configure particle distribution for face landmarks with very tight clustering at 1-2 pixels for a dense mesh effect. Boost depth influence for nose, cheekbones, and eye sockets so facial features pop out in 3D.
+Configure particle distribution for face with very tight 1-2px clustering for dense mesh effect. Face uses pink/magenta palette (#EC4899). Boost depth on nose (forward), cheekbones (forward), and eye sockets (recessed). 4,000-6,000 particles for recognizable facial structure.
 <!-- SECTION:DESCRIPTION:END -->
 
 ## Acceptance Criteria
@@ -28,4 +28,11 @@ Configure particle distribution for face landmarks with very tight clustering at
 - [ ] #4 Eye socket particles recessed for depth
 - [ ] #5 Dense mesh effect creates recognizable face shape
 - [ ] #6 468 landmarks properly weighted for distribution
+- [ ] #7 Face colored pink/magenta (#EC4899)
+- [ ] #8 Ultra-tight 1-2px clustering across all 468 landmarks
+- [ ] #9 Nose landmarks pushed forward with depth boost
+- [ ] #10 Cheekbone landmarks show prominence
+- [ ] #11 Eye socket landmarks recessed for depth
+- [ ] #12 4,000-6,000 particles for dense face mesh
+- [ ] #13 Creates recognizable facial features (eyes, nose, lips visible)
 <!-- AC:END -->
