@@ -4,10 +4,13 @@ title: Implement keyboard controls for SPACE and V
 status: To Do
 assignee: []
 created_date: '2026-01-23 07:51'
+updated_date: '2026-01-23 07:53'
 labels:
   - interaction
   - controls
-dependencies: []
+dependencies:
+  - TASK-015
+  - TASK-003
 priority: medium
 ---
 
