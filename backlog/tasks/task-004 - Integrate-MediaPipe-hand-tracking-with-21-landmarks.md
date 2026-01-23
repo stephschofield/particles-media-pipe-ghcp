@@ -1,7 +1,7 @@
 ---
 id: TASK-004
 title: Integrate MediaPipe hand tracking with 21 landmarks
-status: In Progress
+status: Done
 assignee:
   - '@copilot'
 created_date: '2026-01-23 07:49'
@@ -41,3 +41,24 @@ Set up MediaPipe Hands solution to detect up to 2 hands with all 21 landmarks pe
 6. Handle no-detection state gracefully
 7. Test performance and verify 60 FPS
 <!-- SECTION:PLAN:END -->
+
+## Final Summary
+
+<!-- SECTION:FINAL_SUMMARY:BEGIN -->
+Integrated MediaPipe hand tracking with 60 FPS performance using @mediapipe/tasks-vision.
+
+Changes:
+- Added @mediapipe/tasks-vision package
+- Created src/lib/types.ts with Landmark types and HAND_CONNECTIONS
+- Created HandTrackingProvider with GPU delegate for 60 FPS
+- useHandTracking hook exposes result, isLoading, error states
+- requestAnimationFrame loop for smooth detection
+- CameraPreview now triggers tracking on video load
+- Status indicator shows detection state in top-right
+
+Key technical decisions:
+- GPU delegate for WebGL acceleration
+- VIDEO running mode for streaming frames
+- Handedness flipped to match mirrored video
+- Graceful no-detection state with user prompt
+<!-- SECTION:FINAL_SUMMARY:END -->
