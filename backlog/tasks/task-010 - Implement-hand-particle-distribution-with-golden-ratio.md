@@ -4,7 +4,7 @@ title: Implement hand particle distribution with golden ratio
 status: To Do
 assignee: []
 created_date: '2026-01-23 07:50'
-updated_date: '2026-01-23 07:52'
+updated_date: '2026-01-23 08:04'
 labels:
   - particles
   - hands
@@ -17,7 +17,7 @@ priority: medium
 ## Description
 
 <!-- SECTION:DESCRIPTION:BEGIN -->
-Configure particle distribution for hands using golden ratio math for organic spread. Taper the spread so fingertips are narrow (1-2px), finger segments are medium, and palm areas are wider for natural hand shapes.
+Configure particle distribution for hands using golden ratio spiral for organic spread. Left hand uses blue palette (#3B82F6), right hand uses green palette (#22C55E). Tight clustering: fingertips 1-2px, finger segments 3-5px, palm 8-12px spread. Particles per hand: 800-1,200.
 <!-- SECTION:DESCRIPTION:END -->
 
 ## Acceptance Criteria
@@ -28,4 +28,11 @@ Configure particle distribution for hands using golden ratio math for organic sp
 - [ ] #4 Palm area particles at widest spread
 - [ ] #5 Smooth transitions between spread zones
 - [ ] #6 Distribution follows bone structure naturally
+- [ ] #7 Left hand colored blue (#3B82F6)
+- [ ] #8 Right hand colored green (#22C55E)
+- [ ] #9 Fingertip particles clustered 1-2px spread
+- [ ] #10 Finger segment particles 3-5px spread
+- [ ] #11 Palm particles 8-12px spread
+- [ ] #12 Golden ratio spiral distribution for organic feel
+- [ ] #13 800-1,200 particles allocated per hand
 <!-- AC:END -->
