@@ -4,10 +4,12 @@ title: Build intro screen with Enable Camera button
 status: To Do
 assignee: []
 created_date: '2026-01-23 07:48'
+updated_date: '2026-01-23 07:52'
 labels:
   - ui
   - camera
-dependencies: []
+dependencies:
+  - TASK-001
 priority: high
 ---
 
