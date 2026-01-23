@@ -4,10 +4,13 @@ title: Build status indicator in top right
 status: To Do
 assignee: []
 created_date: '2026-01-23 07:52'
+updated_date: '2026-01-23 07:53'
 labels:
   - ui
   - feedback
-dependencies: []
+dependencies:
+  - TASK-004
+  - TASK-006
 priority: medium
 ---
 
