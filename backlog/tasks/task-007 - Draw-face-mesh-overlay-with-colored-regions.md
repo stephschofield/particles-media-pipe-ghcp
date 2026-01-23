@@ -4,10 +4,13 @@ title: Draw face mesh overlay with colored regions
 status: To Do
 assignee: []
 created_date: '2026-01-23 07:49'
+updated_date: '2026-01-23 07:52'
 labels:
   - visualization
   - canvas
-dependencies: []
+dependencies:
+  - TASK-003
+  - TASK-006
 priority: medium
 ---
 
