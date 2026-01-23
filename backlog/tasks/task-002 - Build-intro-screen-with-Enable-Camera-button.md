@@ -1,10 +1,11 @@
 ---
 id: TASK-002
 title: Build intro screen with Enable Camera button
-status: To Do
-assignee: []
+status: In Progress
+assignee:
+  - '@developer'
 created_date: '2026-01-23 07:48'
-updated_date: '2026-01-23 07:52'
+updated_date: '2026-01-23 14:54'
 labels:
   - ui
   - camera
