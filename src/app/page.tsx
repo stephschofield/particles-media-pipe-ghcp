@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback, useEffect } from "react";
-import { IntroScreen } from "@/components";
+import { CameraPreview, IntroScreen } from "@/components";
 
 type AppView = "intro" | "canvas";
 
@@ -41,11 +41,16 @@ export default function Home() {
     return <IntroScreen onCameraEnabled={handleCameraEnabled} />;
   }
 
-  // Placeholder for canvas view - will be implemented in later tasks
+  // Canvas view with camera preview
   return (
-    <div className="fixed inset-0 bg-black flex items-center justify-center">
-      <p className="text-white/60">Particle canvas coming soon...</p>
-      {/* Camera stream will be used here */}
+    <div className="fixed inset-0 bg-black">
+      {/* Camera preview at top center */}
+      {stream && <CameraPreview stream={stream} />}
+      
+      {/* Placeholder for particle canvas - will be implemented in later tasks */}
+      <div className="flex h-full w-full items-center justify-center">
+        <p className="text-white/60">Particle canvas coming soon...</p>
+      </div>
     </div>
   );
 }
