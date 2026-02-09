@@ -5,7 +5,7 @@ status: In Progress
 assignee:
   - '@copilot'
 created_date: '2026-01-23 07:52'
-updated_date: '2026-02-09 07:20'
+updated_date: '2026-02-09 07:21'
 labels:
   - ui
   - feedback
@@ -49,3 +49,18 @@ Create a dynamic status indicator in the top right corner showing real-time dete
 7. Export from components index
 8. Replace inline status indicator in page.tsx
 <!-- SECTION:PLAN:END -->
+
+## Implementation Notes
+
+<!-- SECTION:NOTES:BEGIN -->
+Created StatusIndicator.tsx component with:
+- Top-right positioning with glassmorphism styling
+- Detection state tracking (loading, detecting, partial, none)
+- Green dot for full detection (2 hands or hand+face)
+- Yellow dot for partial detection (1 hand only)
+- Gray when nothing detected
+- 2-second delay before showing "Show your hands" prompt
+- Smooth CSS transitions for colors
+- Exported from components index
+- Replaced inline status indicator in page.tsx
+<!-- SECTION:NOTES:END -->
