@@ -36,3 +36,16 @@ Create a dynamic status indicator in the top right corner showing real-time dete
 - [ ] #11 Shows 'Show your hands' when nothing detected for 2s
 - [ ] #12 Smooth text transitions without flicker
 <!-- AC:END -->
+
+## Implementation Plan
+
+<!-- SECTION:PLAN:BEGIN -->
+1. Create StatusIndicator.tsx component in src/components
+2. Extract status indicator logic from page.tsx
+3. Accept trackingResult, isLoading, error as props
+4. Add 2s delay before showing "Show your hands" message
+5. Add smooth transitions for text changes
+6. Green dot for active detection, yellow for partial, gray for none
+7. Export from components index
+8. Replace inline status indicator in page.tsx
+<!-- SECTION:PLAN:END -->
