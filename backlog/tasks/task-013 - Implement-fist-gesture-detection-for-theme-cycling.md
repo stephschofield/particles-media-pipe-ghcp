@@ -57,3 +57,30 @@ Key implementation details:
 - 500ms cooldown prevents rapid cycling
 - Visual feedback: flash overlay + centered theme name notification
 <!-- SECTION:NOTES:END -->
+
+## Final Summary
+
+<!-- SECTION:FINAL_SUMMARY:BEGIN -->
+Implemented fist gesture detection for theme cycling.
+
+**Changes:**
+- Created `src/lib/gestures.ts` with pure fist detection functions using finger curl analysis
+- Created `src/lib/useGestureDetection.ts` React hook using useSyncExternalStore for state management
+- Updated `src/app/page.tsx` to integrate gesture detection with visual feedback UI
+
+**Fist Detection Algorithm:**
+- Compares fingertip-to-wrist distance vs MCP-to-wrist distance for each finger
+- Requires 4+ curled fingers (thumb detected separately due to unique anatomy)
+- Theme cycles on fist RELEASE, not on detection (prevents accidental triggers)
+
+**Visual Feedback:**
+- ✊ Fist indicator appears when fist is detected (top-left)
+- Theme name notification with scale animation (center)
+- Radial gradient flash overlay on theme change
+
+**Debouncing:**
+- 500ms cooldown between theme cycles prevents rapid-fire switching
+- Works with either hand (left or right)
+
+**Tests:** tsc --noEmit (zero errors), eslint clean
+<!-- SECTION:FINAL_SUMMARY:END -->
