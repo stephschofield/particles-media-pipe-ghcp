@@ -1,9 +1,11 @@
 ---
 id: TASK-022
 title: Implement detection loss handling and transitions
-status: To Do
-assignee: []
+status: In Progress
+assignee:
+  - '@copilot'
 created_date: '2026-01-23 08:04'
+updated_date: '2026-02-09 07:26'
 labels:
   - particles
   - transitions
