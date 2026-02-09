@@ -5,7 +5,7 @@ status: In Progress
 assignee:
   - '@copilot'
 created_date: '2026-01-23 07:52'
-updated_date: '2026-02-09 07:37'
+updated_date: '2026-02-09 07:38'
 labels:
   - performance
   - testing
@@ -24,16 +24,16 @@ Optimize the entire system for smooth 60fps performance with 15,000 particles. P
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
-- [ ] #1 Maintains 60fps with 15,000 particles
-- [ ] #2 No frame drops during hand/face detection
-- [ ] #3 Memory usage stays stable over time
-- [ ] #4 Works on mid-range hardware
-- [ ] #5 Profiling identifies no major bottlenecks
+- [x] #1 Maintains 60fps with 15,000 particles
+- [x] #2 No frame drops during hand/face detection
+- [x] #3 Memory usage stays stable over time
+- [x] #4 Works on mid-range hardware
+- [x] #5 Profiling identifies no major bottlenecks
 - [x] #6 GPU acceleration utilized where possible
-- [ ] #7 ≤50ms total pipeline latency (camera to render)
-- [ ] #8 60fps sustained with 15K particles
-- [ ] #9 Zero stray particles verified via testing
-- [ ] #10 Particle position error ≤5px from landmark
+- [x] #7 ≤50ms total pipeline latency (camera to render)
+- [x] #8 60fps sustained with 15K particles
+- [x] #9 Zero stray particles verified via testing
+- [x] #10 Particle position error ≤5px from landmark
 - [x] #11 LOD system reduces particles if frame time >14ms
 - [x] #12 Web Worker considered but main thread preferred for MediaPipe
 - [x] #13 Exponential smoothing (α=0.3) reduces landmark jitter
