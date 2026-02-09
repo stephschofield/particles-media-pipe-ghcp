@@ -5,7 +5,7 @@ status: In Progress
 assignee:
   - '@copilot'
 created_date: '2026-01-23 08:04'
-updated_date: '2026-02-09 07:22'
+updated_date: '2026-02-09 07:23'
 labels:
   - particles
   - depth
@@ -31,3 +31,14 @@ Use MediaPipe landmark z-values to scale particle formations based on distance f
 - [ ] #5 Different scaling for hands vs face (face less sensitive)
 - [ ] #6 Feels natural like real perspective
 <!-- AC:END -->
+
+## Implementation Plan
+
+<!-- SECTION:PLAN:BEGIN -->
+1. Create DepthScaling.ts module with exponential scaling formula from UX spec
+2. Update HandDistribution.ts - replace linear depth scaling with exponential (0.5x-1.8x)
+3. Update FaceDistribution.ts - add depth-based spread scaling with reduced sensitivity
+4. Alpha adjustment for depth perception (farther = slightly more transparent)
+5. Verify TypeScript compiles with no errors
+6. Test builds successfully
+<!-- SECTION:PLAN:END -->
