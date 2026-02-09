@@ -29,3 +29,14 @@ Add two particle behavior modes: Attract mode where particles flow toward detect
 - [ ] #5 Repel creates interesting negative space effect
 - [ ] #6 Current mode clearly indicated to user
 <!-- AC:END -->
+
+## Implementation Plan
+
+<!-- SECTION:PLAN:BEGIN -->
+1. Review existing PhysicsMode implementation in ParticlePhysics.ts
+2. Enhance repel mode with repulsion radius and distance capping
+3. Add smooth boundary behavior so particles orbit at repulsion distance
+4. Verify mode state is accessible from React components via exports
+5. Test smooth transitions when toggling modes
+6. Verify TypeScript compilation passes
+<!-- SECTION:PLAN:END -->
