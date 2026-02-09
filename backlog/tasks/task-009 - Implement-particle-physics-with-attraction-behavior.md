@@ -59,3 +59,27 @@ Created complete particle system module in src/core/particles/:
 - ParticleSystem.ts: Main coordinator integrating pool, interpolator, and physics
 - Updated ParticleCanvas component to use new system
 <!-- SECTION:NOTES:END -->
+
+## Final Summary
+
+<!-- SECTION:FINAL_SUMMARY:BEGIN -->
+Implemented core particle physics system with strict landmark binding.
+
+Changes:
+- Added src/core/particles/ module with 5 files (types.ts, ParticlePool.ts, LandmarkInterpolator.ts, ParticlePhysics.ts, ParticleSystem.ts)
+- ParticlePool pre-allocates ~10K particles (21 landmarks × 2 hands × ~50 each + 468 face landmarks × 12 each)
+- Each particle statically bound to exactly one landmark index at init time
+- LandmarkInterpolator uses double-buffering for smooth 30fps→60fps without prediction
+- ParticlePhysics runs fixed timestep (16.67ms) with spring attraction + damping (0.92)
+- Organic noise adds liquid-like feel to particle movement
+- Particles alpha=0 when landmark not detected (invisible but still in buffer)
+- Updated ParticleCanvas to integrate new system
+
+API for TASK-010/011:
+- ParticlePool.updateHandTargets(handIndex, landmarks, handedness)
+- ParticlePool.updateFaceTargets(landmarks)
+- ParticleSystem.setPhysicsMode(Attract|Repel)
+- ParticleSystem.setColors(colors)
+
+Build: TypeScript compiles with zero errors
+<!-- SECTION:FINAL_SUMMARY:END -->
