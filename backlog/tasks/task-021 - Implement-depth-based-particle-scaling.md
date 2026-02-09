@@ -52,3 +52,25 @@ Updated FaceDistribution.ts with FACE_DEPTH_SCALING (0.7x-1.4x reduced sensitivi
 Integrated depth-adjusted alpha calculation for farther = more transparent.
 TypeScript compiles clean, build succeeds.
 <!-- SECTION:NOTES:END -->
+
+## Final Summary
+
+<!-- SECTION:FINAL_SUMMARY:BEGIN -->
+Implemented depth-based particle scaling using MediaPipe z-coordinates for natural perspective effect.
+
+Changes:
+- Created `src/core/particles/DepthScaling.ts` with exponential scaling formula per UX spec
+- Hand particles scale 0.5x (far) to 1.8x (close) using `calculateDepthScale()`
+- Face particles use reduced sensitivity: 0.7x (far) to 1.4x (close)
+- Depth-adjusted alpha: farther particles slightly more transparent
+- Smooth exponential curve prevents jarring size changes
+
+Files modified:
+- src/core/particles/DepthScaling.ts (new)
+- src/core/particles/HandDistribution.ts
+- src/core/particles/FaceDistribution.ts
+
+Testing:
+- TypeScript compiles with zero errors
+- Next.js production build succeeds
+<!-- SECTION:FINAL_SUMMARY:END -->
