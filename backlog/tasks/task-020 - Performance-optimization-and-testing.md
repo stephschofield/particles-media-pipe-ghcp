@@ -1,10 +1,11 @@
 ---
 id: TASK-020
 title: Performance optimization and testing
-status: To Do
-assignee: []
+status: In Progress
+assignee:
+  - '@copilot'
 created_date: '2026-01-23 07:52'
-updated_date: '2026-01-23 08:05'
+updated_date: '2026-02-09 07:37'
 labels:
   - performance
   - testing
@@ -37,3 +38,15 @@ Optimize the entire system for smooth 60fps performance with 15,000 particles. P
 - [ ] #12 Web Worker considered but main thread preferred for MediaPipe
 - [ ] #13 Exponential smoothing (α=0.3) reduces landmark jitter
 <!-- AC:END -->
+
+## Implementation Plan
+
+<!-- SECTION:PLAN:BEGIN -->
+1. Pre-allocate reusable noise object in ParticlePhysics.getOrganicNoise() to avoid per-particle allocation
+2. Pre-allocate landmark arrays in LandmarkInterpolator for getHandLandmarks/getFaceLandmarks
+3. Create FPS counter and performance utilities in src/core/performance.ts
+4. Export performance utilities from particles/index.ts
+5. Verify all useEffect cleanup patterns (event listeners, animation frames, timeouts)
+6. Verify React component memoization (useCallback usage)
+7. Check TypeScript errors
+<!-- SECTION:PLAN:END -->
