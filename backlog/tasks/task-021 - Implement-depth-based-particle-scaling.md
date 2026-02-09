@@ -5,7 +5,7 @@ status: In Progress
 assignee:
   - '@copilot'
 created_date: '2026-01-23 08:04'
-updated_date: '2026-02-09 07:23'
+updated_date: '2026-02-09 07:25'
 labels:
   - particles
   - depth
@@ -24,12 +24,12 @@ Use MediaPipe landmark z-values to scale particle formations based on distance f
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
-- [ ] #1 Z-value extracted from each landmark
-- [ ] #2 Exponential scaling: 0.5x (far) to 1.8x (close)
-- [ ] #3 Scaling affects particle cluster size, not individual particle size
-- [ ] #4 Smooth interpolation prevents jarring size changes
-- [ ] #5 Different scaling for hands vs face (face less sensitive)
-- [ ] #6 Feels natural like real perspective
+- [x] #1 Z-value extracted from each landmark
+- [x] #2 Exponential scaling: 0.5x (far) to 1.8x (close)
+- [x] #3 Scaling affects particle cluster size, not individual particle size
+- [x] #4 Smooth interpolation prevents jarring size changes
+- [x] #5 Different scaling for hands vs face (face less sensitive)
+- [x] #6 Feels natural like real perspective
 <!-- AC:END -->
 
 ## Implementation Plan
