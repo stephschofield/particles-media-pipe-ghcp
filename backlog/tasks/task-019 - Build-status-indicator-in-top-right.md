@@ -64,3 +64,27 @@ Created StatusIndicator.tsx component with:
 - Exported from components index
 - Replaced inline status indicator in page.tsx
 <!-- SECTION:NOTES:END -->
+
+## Final Summary
+
+<!-- SECTION:FINAL_SUMMARY:BEGIN -->
+Built StatusIndicator component for real-time detection feedback.
+
+Changes:
+- Created src/components/StatusIndicator.tsx
+- Top-right positioning with glassmorphism (backdrop-blur, semi-transparent bg)
+- Shows detection status: "Loading...", "X hands + face detected", "Show your hands"
+- Color-coded indicator dot:
+  - Green (#22C55E): Active detection (2 hands, or any hands+face)
+  - Yellow (#EAB308): Partial detection (1 hand only, no face)
+  - Gray (#71717A): No detection or loading
+- 2-second delay before showing "Show your hands" prompt
+- Smooth transitions (300ms) for text and color changes
+- Uses useMemo for computed values, avoids unnecessary re-renders
+- Exported from components/index.ts
+- Replaced inline status indicator in page.tsx with component
+- Removed unused getStatusText function and isDetecting variable from page.tsx
+
+Accessibility: role="status" with aria-live="polite" for screen readers.
+Zero TypeScript errors.
+<!-- SECTION:FINAL_SUMMARY:END -->
