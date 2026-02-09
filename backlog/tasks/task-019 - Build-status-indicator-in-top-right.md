@@ -1,10 +1,11 @@
 ---
 id: TASK-019
 title: Build status indicator in top right
-status: To Do
-assignee: []
+status: In Progress
+assignee:
+  - '@copilot'
 created_date: '2026-01-23 07:52'
-updated_date: '2026-01-23 08:03'
+updated_date: '2026-02-09 07:17'
 labels:
   - ui
   - feedback
