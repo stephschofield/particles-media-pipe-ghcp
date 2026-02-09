@@ -5,7 +5,7 @@ status: In Progress
 assignee:
   - '@copilot'
 created_date: '2026-01-23 07:50'
-updated_date: '2026-02-09 05:57'
+updated_date: '2026-02-09 06:00'
 labels:
   - particles
   - hands
@@ -23,19 +23,19 @@ Configure particle distribution for hands using golden ratio spiral for organic 
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
-- [ ] #1 Golden ratio (phi) used for particle spiral distribution
-- [ ] #2 Fingertip particles clustered in narrow 1-2px spread
-- [ ] #3 Finger segment particles at medium spread
-- [ ] #4 Palm area particles at widest spread
-- [ ] #5 Smooth transitions between spread zones
-- [ ] #6 Distribution follows bone structure naturally
-- [ ] #7 Left hand colored blue (#3B82F6)
-- [ ] #8 Right hand colored green (#22C55E)
-- [ ] #9 Fingertip particles clustered 1-2px spread
-- [ ] #10 Finger segment particles 3-5px spread
-- [ ] #11 Palm particles 8-12px spread
-- [ ] #12 Golden ratio spiral distribution for organic feel
-- [ ] #13 800-1,200 particles allocated per hand
+- [x] #1 Golden ratio (phi) used for particle spiral distribution
+- [x] #2 Fingertip particles clustered in narrow 1-2px spread
+- [x] #3 Finger segment particles at medium spread
+- [x] #4 Palm area particles at widest spread
+- [x] #5 Smooth transitions between spread zones
+- [x] #6 Distribution follows bone structure naturally
+- [x] #7 Left hand colored blue (#3B82F6)
+- [x] #8 Right hand colored green (#22C55E)
+- [x] #9 Fingertip particles clustered 1-2px spread
+- [x] #10 Finger segment particles 3-5px spread
+- [x] #11 Palm particles 8-12px spread
+- [x] #12 Golden ratio spiral distribution for organic feel
+- [x] #13 800-1,200 particles allocated per hand
 <!-- AC:END -->
 
 ## Implementation Plan
