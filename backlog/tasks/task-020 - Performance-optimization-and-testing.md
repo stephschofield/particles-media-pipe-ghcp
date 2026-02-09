@@ -29,14 +29,14 @@ Optimize the entire system for smooth 60fps performance with 15,000 particles. P
 - [ ] #3 Memory usage stays stable over time
 - [ ] #4 Works on mid-range hardware
 - [ ] #5 Profiling identifies no major bottlenecks
-- [ ] #6 GPU acceleration utilized where possible
+- [x] #6 GPU acceleration utilized where possible
 - [ ] #7 ≤50ms total pipeline latency (camera to render)
 - [ ] #8 60fps sustained with 15K particles
 - [ ] #9 Zero stray particles verified via testing
 - [ ] #10 Particle position error ≤5px from landmark
-- [ ] #11 LOD system reduces particles if frame time >14ms
-- [ ] #12 Web Worker considered but main thread preferred for MediaPipe
-- [ ] #13 Exponential smoothing (α=0.3) reduces landmark jitter
+- [x] #11 LOD system reduces particles if frame time >14ms
+- [x] #12 Web Worker considered but main thread preferred for MediaPipe
+- [x] #13 Exponential smoothing (α=0.3) reduces landmark jitter
 <!-- AC:END -->
 
 ## Implementation Plan
