@@ -1,10 +1,11 @@
 ---
 id: TASK-014
 title: Add particle trails with semi-transparent fade
-status: To Do
-assignee: []
+status: In Progress
+assignee:
+  - '@copilot'
 created_date: '2026-01-23 07:51'
-updated_date: '2026-01-23 07:53'
+updated_date: '2026-02-09 07:00'
 labels:
   - particles
   - effects
