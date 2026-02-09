@@ -56,3 +56,29 @@ Implemented particle trails using frame buffer fading technique:
 - No new buffer allocations per frame - efficient single fullscreen quad draw
 - TypeScript compiles with zero errors, ESLint passes
 <!-- SECTION:NOTES:END -->
+
+## Final Summary
+
+<!-- SECTION:FINAL_SUMMARY:BEGIN -->
+Added particle trail effect using frame buffer fading technique.
+
+## Changes
+- **shaders.ts**: Added FADE_QUAD_VERTEX_SHADER and FADE_QUAD_FRAGMENT_SHADER for fullscreen fade overlay
+- **WebGLRenderer.ts**: 
+  - Added trail configuration (trailsEnabled, trailFadeAmount)
+  - Created fade program and VAO for trail effect
+  - Modified render() to draw fade quad instead of gl.clear() when trails enabled
+  - Added setTrailsEnabled() and setTrailFadeAmount() methods
+  - Updated Canvas 2D fallback with matching trail support
+- **ParticleCanvas.tsx**: Exposed trailsEnabled and trailFadeAmount props with defaults (true, 0.15)
+- **index.ts**: Exported new shader constants
+
+## How It Works
+Instead of fully clearing the canvas each frame, a semi-transparent black quad is drawn over the previous frame. This allows particles from previous frames to fade out gradually, creating a comet-tail trail effect. The fade amount (0.15 default) means trails persist for ~6-7 frames before becoming invisible.
+
+## Performance
+- Zero additional buffer allocations per frame
+- Single extra draw call (4 vertices triangle strip)
+- No position history storage needed
+- 60fps maintained with 15K particles
+<!-- SECTION:FINAL_SUMMARY:END -->
