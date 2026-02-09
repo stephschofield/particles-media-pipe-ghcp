@@ -52,3 +52,44 @@ Implementation complete:
 - ParticleSystem coordinates state updates and applies alpha multipliers per frame
 - Smooth easing curves: easeInCubic for fadeout (slow start, fast end), easeOutCubic for fadein (fast start, slow end)
 <!-- SECTION:NOTES:END -->
+
+## Final Summary
+
+<!-- SECTION:FINAL_SUMMARY:BEGIN -->
+Implemented detection loss handling and smooth transitions for the particle system.
+
+## Changes
+
+**New file: src/core/particles/DetectionStateManager.ts**
+- State machine with 5 states: Detected, Occluded, FadingOut, Hidden, FadingIn
+- Tracks state per entity (2 hands + face independently)
+- Configurable timing: 200ms fadeout, 300ms occlusion threshold, 100ms fadein
+- Supports 70% opacity during brief occlusions (<300ms)
+- Global idle detection after 500ms of no tracking
+
+**Modified: ParticlePool.ts**
+- Added baseAlpha array to track particle alpha before multiplier
+- Added handAlphaMultipliers and faceAlphaMultiplier fields
+- New methods: applyHandAlphaMultiplier(), applyFaceAlphaMultiplier()
+- Updated updateHandTargets() and updateFaceTargets() to accept alphaMultiplier
+
+**Modified: ParticleSystem.ts**
+- Integrated DetectionStateManager for coordinated transitions
+- Updated updateParticleTargets() to use detection state for alpha and target updates
+- Added isIdle() method for external status checking
+- Reset now includes detection state manager
+
+**Modified: ParticlePhysics.ts**
+- Added detection state awareness for drift behavior
+- Fading particles now drift gently with noise instead of freezing
+- Reduced attraction force and damping for floating effect during fadeout
+
+**Modified: index.ts**
+- Exported DetectionStateManager, DetectionState, and DETECTION_TIMING
+
+## Behavior
+- When detection lost: particles hold at 70% opacity for up to 300ms (debounce)
+- If still lost after 300ms: fade to 0% over 200ms with gentle drift
+- When re-detected: fade in from 0% to 100% over 100ms
+- No jarring snap-back; smooth position lerping on re-detection
+<!-- SECTION:FINAL_SUMMARY:END -->
