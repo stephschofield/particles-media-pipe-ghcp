@@ -29,3 +29,16 @@ Add keyboard event handlers for SPACE key to toggle particle mode and V key to t
 - [ ] #4 No conflicts with text input fields
 - [ ] #5 Key events properly cleaned up on unmount
 <!-- AC:END -->
+
+## Implementation Plan
+
+<!-- SECTION:PLAN:BEGIN -->
+1. Create useKeyboardControls hook in src/lib
+2. Add window-level keydown event listener with useEffect
+3. SPACE key toggles physics mode (attract/repel)
+4. V key cycles theme using cycleTheme from themes.ts
+5. Prevent default on SPACE to avoid page scroll
+6. Skip events when in text input fields
+7. Clean up listener on unmount
+8. Integrate hook in page.tsx CanvasView
+<!-- SECTION:PLAN:END -->
