@@ -5,7 +5,7 @@ status: In Progress
 assignee:
   - '@copilot'
 created_date: '2026-01-23 07:51'
-updated_date: '2026-02-09 07:06'
+updated_date: '2026-02-09 07:09'
 labels:
   - particles
   - interaction
@@ -22,12 +22,12 @@ Add two particle behavior modes: Attract mode where particles flow toward detect
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
-- [ ] #1 Attract mode pulls particles toward landmarks
-- [ ] #2 Repel mode pushes particles away from landmarks
-- [ ] #3 Mode togglable via UI or keyboard
-- [ ] #4 Smooth transition when switching modes
-- [ ] #5 Repel creates interesting negative space effect
-- [ ] #6 Current mode clearly indicated to user
+- [x] #1 Attract mode pulls particles toward landmarks
+- [x] #2 Repel mode pushes particles away from landmarks
+- [x] #3 Mode togglable via UI or keyboard
+- [x] #4 Smooth transition when switching modes
+- [x] #5 Repel creates interesting negative space effect
+- [x] #6 Current mode clearly indicated to user
 <!-- AC:END -->
 
 ## Implementation Plan
