@@ -86,27 +86,34 @@ export function FaceMesh({ width = 256, height = 144 }: FaceMeshProps) {
     // Draw lips inner (pink, thinner)
     drawPath(LIPS_INNER, COLORS.lips.primary, COLORS.lips.glow, 1);
 
-    // Optional: Draw depth-enhanced points for nose, cheeks (subtle)
-    const depthPoints = [
-      1,    // Nose tip
-      234,  // Left cheek
-      454,  // Right cheek
+    // Depth-enhanced rendering for nose, cheeks, and eye sockets
+    // Grouped by region with appropriate colors
+    const depthRegions = [
+      // Nose landmarks - cyan
+      { indices: [1, 6, 168], color: COLORS.faceOval.primary },
+      // Cheek landmarks - cyan
+      { indices: [234, 454], color: COLORS.faceOval.primary },
+      // Eye socket landmarks (inner/outer corners with depth) - teal
+      { indices: [130, 226, 359, 446, 133, 362], color: COLORS.eyes.primary },
     ];
 
-    ctx.fillStyle = COLORS.faceOval.primary;
-    ctx.shadowBlur = 8;
-    
-    for (const idx of depthPoints) {
-      const lm = landmarks[idx];
-      if (!lm) continue;
+    for (const region of depthRegions) {
+      ctx.fillStyle = region.color;
+      ctx.shadowColor = region.color;
+      ctx.shadowBlur = 8;
 
-      // Use z-depth for sizing (closer = larger)
-      const depthScale = 1 + (Math.abs(lm.z || 0) * 2);
-      const size = 2 * Math.min(depthScale, 2);
+      for (const idx of region.indices) {
+        const lm = landmarks[idx];
+        if (!lm) continue;
 
-      ctx.beginPath();
-      ctx.arc(lm.x * width, lm.y * height, size, 0, Math.PI * 2);
-      ctx.fill();
+        // Use z-depth for sizing (closer = larger, farther = smaller)
+        const depthScale = 1 + (Math.abs(lm.z || 0) * 2);
+        const size = 2 * Math.min(depthScale, 2);
+
+        ctx.beginPath();
+        ctx.arc(lm.x * width, lm.y * height, size, 0, Math.PI * 2);
+        ctx.fill();
+      }
     }
   }, [result, width, height]);
 
