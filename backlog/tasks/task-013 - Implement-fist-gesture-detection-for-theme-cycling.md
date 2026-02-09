@@ -5,7 +5,7 @@ status: In Progress
 assignee:
   - '@copilot'
 created_date: '2026-01-23 07:51'
-updated_date: '2026-02-09 06:54'
+updated_date: '2026-02-09 06:58'
 labels:
   - gestures
   - interaction
@@ -23,12 +23,12 @@ Detect when user makes a fist gesture using hand landmark positions. When fist i
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
-- [ ] #1 Fist gesture detected by finger curl analysis
-- [ ] #2 Theme cycles on fist release, not on fist make
-- [ ] #3 Debounce prevents rapid cycling
-- [ ] #4 Works with either hand
-- [ ] #5 Visual feedback when fist detected
-- [ ] #6 No false positives during normal hand movement
+- [x] #1 Fist gesture detected by finger curl analysis
+- [x] #2 Theme cycles on fist release, not on fist make
+- [x] #3 Debounce prevents rapid cycling
+- [x] #4 Works with either hand
+- [x] #5 Visual feedback when fist detected
+- [x] #6 No false positives during normal hand movement
 <!-- AC:END -->
 
 ## Implementation Plan
