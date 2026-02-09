@@ -1,7 +1,7 @@
 ---
 id: TASK-013
 title: Implement fist gesture detection for theme cycling
-status: In Progress
+status: Done
 assignee:
   - '@copilot'
 created_date: '2026-01-23 07:51'
