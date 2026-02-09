@@ -1,10 +1,11 @@
 ---
 id: TASK-012
 title: Add 5 color themes with cycling support
-status: To Do
-assignee: []
+status: In Progress
+assignee:
+  - '@copilot'
 created_date: '2026-01-23 07:50'
-updated_date: '2026-01-23 07:52'
+updated_date: '2026-02-09 06:49'
 labels:
   - themes
   - particles
