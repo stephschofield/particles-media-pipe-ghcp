@@ -5,7 +5,7 @@ status: In Progress
 assignee:
   - '@copilot'
 created_date: '2026-01-23 07:51'
-updated_date: '2026-02-09 07:10'
+updated_date: '2026-02-09 07:12'
 labels:
   - ui
   - controls
@@ -36,3 +36,15 @@ Create Attract Mode toggle button in top left with glassmorphism styling. Button
 - [ ] #11 Icon + text labels (magnet icon for attract)
 - [ ] #12 Hover and click states with smooth transitions
 <!-- AC:END -->
+
+## Implementation Plan
+
+<!-- SECTION:PLAN:BEGIN -->
+1. Create ModeToggle.tsx client component with Attract/Repel buttons
+2. Apply glassmorphism styling per UX spec (blur, semi-transparent bg)
+3. Use teal (#14B8A6) for Attract active state, orange (#F97316) for Repel
+4. Add ARIA labels for accessibility (aria-pressed, aria-label, role=group)
+5. Export from components barrel
+6. Integrate into page.tsx CanvasView with state management
+7. Connect to ParticleCanvas physicsMode prop
+<!-- SECTION:PLAN:END -->
