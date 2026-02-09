@@ -1,7 +1,7 @@
 ---
 id: TASK-022
 title: Implement detection loss handling and transitions
-status: In Progress
+status: Done
 assignee:
   - '@copilot'
 created_date: '2026-01-23 08:04'
