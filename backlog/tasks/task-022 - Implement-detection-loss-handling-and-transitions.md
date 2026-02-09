@@ -22,12 +22,12 @@ Handle smooth transitions when hands/face detection is lost or regained. Particl
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
-- [ ] #1 Particles fade out over 200ms when landmark lost
-- [ ] #2 Hold last position for <300ms occlusion with 70% opacity
-- [ ] #3 Lerp to new position over 100ms on re-detection
-- [ ] #4 No jarring snap-back or pop-in effects
-- [ ] #5 Smooth particle redistribution when hand count changes
-- [ ] #6 Idle state after 500ms+ of no detection
+- [x] #1 Particles fade out over 200ms when landmark lost
+- [x] #2 Hold last position for <300ms occlusion with 70% opacity
+- [x] #3 Lerp to new position over 100ms on re-detection
+- [x] #4 No jarring snap-back or pop-in effects
+- [x] #5 Smooth particle redistribution when hand count changes
+- [x] #6 Idle state after 500ms+ of no detection
 <!-- AC:END -->
 
 ## Implementation Plan
