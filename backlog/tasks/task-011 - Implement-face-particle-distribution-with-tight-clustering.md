@@ -49,3 +49,16 @@ Configure particle distribution for face with very tight 1-2px clustering for de
 6. Integrate with ParticlePool.updateFaceTargets to use new distribution
 7. Verify TypeScript compiles cleanly
 <!-- SECTION:PLAN:END -->
+
+## Implementation Notes
+
+<!-- SECTION:NOTES:BEGIN -->
+- Created FaceDistribution.ts with zone-specific categories: Nose, Cheekbone, EyeSocket, Lips, Contour, General
+- Implemented depth boost system: nose 1.3x forward, cheekbones 1.15x forward, eye sockets 0.85x recessed
+- Configured ultra-tight 1-2px clustering across all 468 landmarks
+- Zone-specific particle counts: 14/landmark for nose, 12 for most zones, 11 for contour
+- Total face particles: 5,664 (within 4,000-6,000 spec)
+- Integrated with ParticlePool.updateFaceTargets() using new calculateFaceParticleSpread()
+- Exported all functions from particles/index.ts
+- TypeScript compiles cleanly
+<!-- SECTION:NOTES:END -->
