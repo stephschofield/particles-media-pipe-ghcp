@@ -1,7 +1,7 @@
 ---
 id: TASK-017
 title: Add keyboard shortcuts panel in bottom right
-status: In Progress
+status: Done
 assignee:
   - '@copilot'
 created_date: '2026-01-23 07:51'
