@@ -42,3 +42,13 @@ Implement 5 particle color themes: Rainbow (spectrum colors), Fire (red/orange/y
 7. Update ParticleCanvas to support theme prop and onThemeChange callback
 8. Test for TypeScript errors
 <!-- SECTION:PLAN:END -->
+
+## Implementation Notes
+
+<!-- SECTION:NOTES:BEGIN -->
+- Created src/core/themes.ts with 5 color themes
+- Implemented ThemeManager class with subscribe pattern for reactive updates
+- Integrated theme colors into ParticleCanvas via themeName prop and themeManager subscription
+- All themes apply immediately to particle colors on change
+- Zero TypeScript errors verified
+<!-- SECTION:NOTES:END -->
