@@ -29,3 +29,16 @@ Implement particle trails that show movement history with semi-transparent fadin
 - [ ] #5 Trails enhance flowing liquid aesthetic
 - [ ] #6 Trail rendering uses efficient technique
 <!-- AC:END -->
+
+## Implementation Plan
+
+<!-- SECTION:PLAN:BEGIN -->
+1. Modify WebGLRenderer to support trail fading instead of full clear
+2. Add fullscreen quad shader for drawing semi-transparent black overlay
+3. Add trail configuration (enabled, fadeAmount) to renderer
+4. Create vertex/fragment shaders for fade quad
+5. Update render() to apply fade overlay when trails enabled
+6. Add trailOpacity prop to ParticleCanvas component
+7. Update Canvas 2D fallback to support trails
+8. Test performance at 60fps with trails enabled
+<!-- SECTION:PLAN:END -->
