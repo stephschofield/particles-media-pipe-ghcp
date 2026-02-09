@@ -5,7 +5,7 @@ status: In Progress
 assignee:
   - '@copilot'
 created_date: '2026-01-23 07:50'
-updated_date: '2026-02-09 06:01'
+updated_date: '2026-02-09 06:02'
 labels:
   - particles
   - face
@@ -37,3 +37,15 @@ Configure particle distribution for face with very tight 1-2px clustering for de
 - [ ] #12 4,000-6,000 particles for dense face mesh
 - [ ] #13 Creates recognizable facial features (eyes, nose, lips visible)
 <!-- AC:END -->
+
+## Implementation Plan
+
+<!-- SECTION:PLAN:BEGIN -->
+1. Create FaceDistribution.ts with face landmark categories (nose, cheekbones, eyes, lips, contour)
+2. Implement depth boost for nose (+Z), cheekbones (+Z slight), eye sockets (-Z recessed)
+3. Configure 1-2px tight clustering for all landmarks
+4. Allocate ~12 particles per landmark (468 × 12 ≈ 5,616 total)
+5. Export from particles/index.ts
+6. Integrate with ParticlePool.updateFaceTargets to use new distribution
+7. Verify TypeScript compiles cleanly
+<!-- SECTION:PLAN:END -->
