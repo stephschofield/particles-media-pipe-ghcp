@@ -50,3 +50,20 @@ Shows SPACE for toggle mode, V for cycle theme.
 Includes dismiss X button to hide panel.
 Exported from components index and added to CanvasView.
 <!-- SECTION:NOTES:END -->
+
+## Final Summary
+
+<!-- SECTION:FINAL_SUMMARY:BEGIN -->
+Added keyboard shortcuts panel in bottom-right corner of canvas view.
+
+Changes:
+- Created src/components/KeyboardShortcuts.tsx with glassmorphism styling
+- Shows SPACE (toggle mode) and V (cycle theme) shortcuts
+- Panel is dismissible via X button
+- Subtle styling with backdrop blur and semi-transparent background
+- Exported from components/index.ts
+- Integrated into page.tsx CanvasView
+
+Styling matches existing UI elements (ModeToggle, FPS indicator).
+Zero TypeScript errors.
+<!-- SECTION:FINAL_SUMMARY:END -->
