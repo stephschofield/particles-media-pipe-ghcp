@@ -40,3 +40,16 @@ Add two particle behavior modes: Attract mode where particles flow toward detect
 5. Test smooth transitions when toggling modes
 6. Verify TypeScript compilation passes
 <!-- SECTION:PLAN:END -->
+
+## Implementation Notes
+
+<!-- SECTION:NOTES:BEGIN -->
+- Reviewed existing PhysicsMode enum and basic force multiplier implementation
+- Enhanced repel mode with RepulsionConfig: minRadius (30px), maxRadius (120px), strength, damping
+- In repel mode particles push away, orbit at equilibrium distance, and are pulled back if too far
+- Added tangential drift in orbit zone for interesting visual movement
+- Added mode transition progress for smooth ~300ms transitions
+- Exposed getModeName(), isTransitioning(), setRepulsionConfig(), getRepulsionConfig() on ParticlePhysics
+- Exposed same methods on ParticleSystem for React component access
+- Exported RepulsionConfig type from particles index
+<!-- SECTION:NOTES:END -->
