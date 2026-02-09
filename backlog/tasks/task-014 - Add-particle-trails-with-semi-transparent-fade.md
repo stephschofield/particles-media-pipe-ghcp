@@ -5,7 +5,7 @@ status: In Progress
 assignee:
   - '@copilot'
 created_date: '2026-01-23 07:51'
-updated_date: '2026-02-09 07:04'
+updated_date: '2026-02-09 07:05'
 labels:
   - particles
   - effects
@@ -42,3 +42,17 @@ Implement particle trails that show movement history with semi-transparent fadin
 7. Update Canvas 2D fallback to support trails
 8. Test performance at 60fps with trails enabled
 <!-- SECTION:PLAN:END -->
+
+## Implementation Notes
+
+<!-- SECTION:NOTES:BEGIN -->
+Implemented particle trails using frame buffer fading technique:
+- Added fade quad shaders (FADE_QUAD_VERTEX_SHADER, FADE_QUAD_FRAGMENT_SHADER) for drawing semi-transparent black overlay
+- Modified WebGLRenderer to draw fade quad instead of full clear when trails enabled
+- Trail fade creates comet-tail effect by allowing previous frames to persist with decreasing visibility
+- Added setTrailsEnabled() and setTrailFadeAmount() methods for runtime configuration
+- Updated Canvas 2D fallback to support trails with same technique
+- ParticleCanvas exposes trailsEnabled (default: true) and trailFadeAmount (default: 0.15 = ~6-7 frame trails)
+- No new buffer allocations per frame - efficient single fullscreen quad draw
+- TypeScript compiles with zero errors, ESLint passes
+<!-- SECTION:NOTES:END -->
