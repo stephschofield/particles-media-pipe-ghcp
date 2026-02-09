@@ -5,7 +5,7 @@ status: In Progress
 assignee:
   - '@copilot'
 created_date: '2026-01-23 07:50'
-updated_date: '2026-02-09 05:56'
+updated_date: '2026-02-09 05:57'
 labels:
   - particles
   - hands
@@ -37,3 +37,15 @@ Configure particle distribution for hands using golden ratio spiral for organic 
 - [ ] #12 Golden ratio spiral distribution for organic feel
 - [ ] #13 800-1,200 particles allocated per hand
 <!-- AC:END -->
+
+## Implementation Plan
+
+<!-- SECTION:PLAN:BEGIN -->
+1. Create src/core/particles/HandDistribution.ts with golden ratio spiral distribution logic
+2. Define zone-specific spread values: fingertips 1-2px, finger segments 3-5px, palm 8-12px
+3. Update ParticlePool.ts to use zone-specific spread in updateHandTargets
+4. Ensure particle allocation results in 800-1200 particles per hand
+5. Verify left=blue (#3B82F6), right=green (#22C55E) color assignments
+6. Export HandDistribution from index.ts
+7. Test TypeScript compilation
+<!-- SECTION:PLAN:END -->
