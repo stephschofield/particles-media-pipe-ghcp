@@ -1,7 +1,7 @@
 ---
 id: TASK-019
 title: Build status indicator in top right
-status: In Progress
+status: Done
 assignee:
   - '@copilot'
 created_date: '2026-01-23 07:52'
