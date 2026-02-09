@@ -5,7 +5,7 @@ status: In Progress
 assignee:
   - '@copilot'
 created_date: '2026-01-23 07:52'
-updated_date: '2026-02-09 07:38'
+updated_date: '2026-02-09 07:39'
 labels:
   - performance
   - testing
@@ -50,3 +50,41 @@ Optimize the entire system for smooth 60fps performance with 15,000 particles. P
 6. Verify React component memoization (useCallback usage)
 7. Check TypeScript errors
 <!-- SECTION:PLAN:END -->
+
+## Implementation Notes
+
+<!-- SECTION:NOTES:BEGIN -->
+## Hot Path Optimizations Completed
+
+### 1. ParticlePhysics.getOrganicNoise()
+- Pre-allocated reusable {x, y} object to avoid 15,000 object allocations per frame
+- Reduces GC pressure significantly in the physics loop
+
+### 2. LandmarkInterpolator landmark arrays
+- Pre-allocated handLandmarkCache[2][21] and faceLandmarkCache[468]
+- getHandLandmarks() and getFaceLandmarks() now reuse arrays instead of creating new ones each frame
+
+### 3. Created src/core/performance.ts
+- FPSCounter: Lightweight FPS monitoring with dropped frame detection
+- LODManager: Adaptive quality system that reduces particles when frame time >14ms
+- ExponentialSmoother: α=0.3 smoothing for jitter reduction (AC #13)
+- Point2DSmoother: 2D coordinate smoothing with pre-allocated result object
+- measureTime/measureTimeAsync: Utility functions for profiling
+
+### 4. WebGL optimizations verified
+- Using bufferData() at initialization, bufferSubData() for updates (correct pattern)
+- powerPreference: "high-performance" for GPU acceleration
+- Single draw call for all particles
+- Minimal state changes per frame
+
+### 5. Cleanup patterns verified
+- All useEffect hooks properly clean up event listeners
+- Animation frames cancelled on unmount
+- setTimeout/setInterval cleared on unmount
+- isMounted flags used where appropriate
+
+### 6. React rendering
+- useCallback used for callbacks passed to children
+- Refs used for mutable state that doesn't trigger re-renders
+- Canvas component stable (no unnecessary re-renders)
+<!-- SECTION:NOTES:END -->
