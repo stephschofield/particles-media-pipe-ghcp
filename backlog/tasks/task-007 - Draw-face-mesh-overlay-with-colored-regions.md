@@ -5,7 +5,7 @@ status: In Progress
 assignee:
   - '@copilot'
 created_date: '2026-01-23 07:49'
-updated_date: '2026-01-23 16:16'
+updated_date: '2026-02-09 05:46'
 labels:
   - visualization
   - canvas
@@ -23,12 +23,12 @@ Render a mesh overlay on the camera preview showing face landmarks with colored 
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
-- [ ] #1 Eye regions outlined in teal color
-- [ ] #2 Lip regions outlined in pink color
-- [ ] #3 Face oval contour drawn in cyan
-- [ ] #4 Mesh lines connect appropriate landmark pairs
-- [ ] #5 Overlay properly scales to 256x144 preview
-- [ ] #6 Depth-enhanced rendering for nose, cheeks, eye sockets
+- [x] #1 Eye regions outlined in teal color
+- [x] #2 Lip regions outlined in pink color
+- [x] #3 Face oval contour drawn in cyan
+- [x] #4 Mesh lines connect appropriate landmark pairs
+- [x] #5 Overlay properly scales to 256x144 preview
+- [x] #6 Depth-enhanced rendering for nose, cheeks, eye sockets
 <!-- AC:END -->
 
 ## Implementation Plan
