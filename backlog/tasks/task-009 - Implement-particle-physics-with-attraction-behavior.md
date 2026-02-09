@@ -47,3 +47,15 @@ Build the core particle system with STRICT landmark binding - particles ONLY exi
 6. Update ParticleCanvas to use new particle system
 7. Test and verify all acceptance criteria
 <!-- SECTION:PLAN:END -->
+
+## Implementation Notes
+
+<!-- SECTION:NOTES:BEGIN -->
+Created complete particle system module in src/core/particles/:
+- types.ts: Full type definitions for particle system
+- ParticlePool.ts: Pre-allocated Float32Arrays for ~15K particles statically bound to landmarks
+- LandmarkInterpolator.ts: Double-buffered 30fps→60fps interpolation (no prediction to avoid overshoot)
+- ParticlePhysics.ts: Fixed timestep (16.67ms) physics with spring attraction + organic noise for liquid feel
+- ParticleSystem.ts: Main coordinator integrating pool, interpolator, and physics
+- Updated ParticleCanvas component to use new system
+<!-- SECTION:NOTES:END -->
