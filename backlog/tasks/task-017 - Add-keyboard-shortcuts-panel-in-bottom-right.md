@@ -40,3 +40,13 @@ Display a keyboard shortcuts panel in the bottom right corner showing available 
 5. Export from components index
 6. Add to CanvasView in page.tsx
 <!-- SECTION:PLAN:END -->
+
+## Implementation Notes
+
+<!-- SECTION:NOTES:BEGIN -->
+Created KeyboardShortcuts.tsx with glassmorphism styling matching ModeToggle.
+Positioned bottom-right using absolute positioning.
+Shows SPACE for toggle mode, V for cycle theme.
+Includes dismiss X button to hide panel.
+Exported from components index and added to CanvasView.
+<!-- SECTION:NOTES:END -->
