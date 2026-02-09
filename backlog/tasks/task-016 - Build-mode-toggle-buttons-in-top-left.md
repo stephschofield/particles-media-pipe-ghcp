@@ -48,3 +48,17 @@ Create Attract Mode toggle button in top left with glassmorphism styling. Button
 6. Integrate into page.tsx CanvasView with state management
 7. Connect to ParticleCanvas physicsMode prop
 <!-- SECTION:PLAN:END -->
+
+## Implementation Notes
+
+<!-- SECTION:NOTES:BEGIN -->
+- Created ModeToggle.tsx with two pill-shaped buttons (Attract/Repel)
+- Glassmorphism: rgba(255,255,255,0.05) bg, blur(10px), subtle border
+- Teal (#14B8A6) accent for active Attract, orange (#F97316) for Repel
+- Glow effect (box-shadow) on active buttons
+- Icon symbols: ◉ (filled) for Attract, ○ (empty) for Repel
+- Full ARIA support: aria-pressed, aria-label, role=group
+- Integrated into page.tsx CanvasView with useState
+- ParticleCanvas physicsMode prop connected
+- Note: AC #10 (Hide Camera button) not in scope per user guidance
+<!-- SECTION:NOTES:END -->
