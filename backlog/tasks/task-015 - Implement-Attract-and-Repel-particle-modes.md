@@ -53,3 +53,24 @@ Add two particle behavior modes: Attract mode where particles flow toward detect
 - Exposed same methods on ParticleSystem for React component access
 - Exported RepulsionConfig type from particles index
 <!-- SECTION:NOTES:END -->
+
+## Final Summary
+
+<!-- SECTION:FINAL_SUMMARY:BEGIN -->
+Implemented Attract and Repel particle modes with smooth transitions and configurable repulsion behavior.
+
+Changes:
+- Enhanced ParticlePhysics.ts with RepulsionConfig interface (minRadius, maxRadius, strength, damping)
+- Repel mode now creates interesting negative space: particles push away from landmarks, settle at equilibrium distance (30-120px), with tangential drift for organic movement
+- Added smooth mode transitions (~300ms) so particles flow organically when toggling modes
+- Exposed getModeName(), isTransitioning(), setRepulsionConfig(), getRepulsionConfig() methods
+- ParticleSystem exposes same APIs for React component access
+- Exported RepulsionConfig type from particles/index.ts
+
+Files modified:
+- src/core/particles/ParticlePhysics.ts
+- src/core/particles/ParticleSystem.ts
+- src/core/particles/index.ts
+
+The existing ParticleCanvas already accepts physicsMode prop and uses ParticleSystem.setPhysicsMode(). UI buttons (TASK-016) and keyboard shortcuts (TASK-018) will connect to this system.
+<!-- SECTION:FINAL_SUMMARY:END -->
