@@ -1,7 +1,7 @@
 ---
 id: TASK-009
 title: Implement particle physics with attraction behavior
-status: In Progress
+status: Done
 assignee:
   - '@copilot'
 created_date: '2026-01-23 07:50'
