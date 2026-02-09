@@ -5,7 +5,7 @@ status: In Progress
 assignee:
   - '@copilot'
 created_date: '2026-01-23 07:51'
-updated_date: '2026-02-09 06:58'
+updated_date: '2026-02-09 06:59'
 labels:
   - gestures
   - interaction
@@ -41,3 +41,19 @@ Detect when user makes a fist gesture using hand landmark positions. When fist i
 5. Test with both hands
 6. Verify no false positives
 <!-- SECTION:PLAN:END -->
+
+## Implementation Notes
+
+<!-- SECTION:NOTES:BEGIN -->
+Implemented fist gesture detection with the following components:
+- src/lib/gestures.ts: Pure functions for fist detection using finger curl analysis
+- src/lib/useGestureDetection.ts: React hook with useSyncExternalStore pattern
+- Integrated into page.tsx CanvasView with visual feedback
+
+Key implementation details:
+- Finger curl detection compares fingertip-to-wrist vs MCP-to-wrist distances
+- Thumb uses separate logic due to unique anatomy
+- Theme cycles on fist RELEASE (not on fist make) per AC #2
+- 500ms cooldown prevents rapid cycling
+- Visual feedback: flash overlay + centered theme name notification
+<!-- SECTION:NOTES:END -->
