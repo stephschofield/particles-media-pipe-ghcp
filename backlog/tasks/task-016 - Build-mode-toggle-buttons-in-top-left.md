@@ -1,10 +1,11 @@
 ---
 id: TASK-016
 title: Build mode toggle buttons in top left
-status: To Do
-assignee: []
+status: In Progress
+assignee:
+  - '@copilot'
 created_date: '2026-01-23 07:51'
-updated_date: '2026-01-23 08:04'
+updated_date: '2026-02-09 07:10'
 labels:
   - ui
   - controls
