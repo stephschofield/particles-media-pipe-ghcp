@@ -1,7 +1,7 @@
 ---
 id: TASK-012
 title: Add 5 color themes with cycling support
-status: In Progress
+status: Done
 assignee:
   - '@copilot'
 created_date: '2026-01-23 07:50'
