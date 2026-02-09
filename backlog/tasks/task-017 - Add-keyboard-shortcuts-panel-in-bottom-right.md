@@ -5,7 +5,7 @@ status: In Progress
 assignee:
   - '@copilot'
 created_date: '2026-01-23 07:51'
-updated_date: '2026-02-09 07:14'
+updated_date: '2026-02-09 07:15'
 labels:
   - ui
   - help
@@ -22,12 +22,12 @@ Display a keyboard shortcuts panel in the bottom right corner showing available 
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
-- [ ] #1 Panel positioned in bottom right corner
-- [ ] #2 Shows SPACE = toggle mode shortcut
-- [ ] #3 Shows V = toggle camera shortcut
-- [ ] #4 Subtle styling that doesn't distract
-- [ ] #5 Text readable on any background
-- [ ] #6 Panel can be dismissed or hidden
+- [x] #1 Panel positioned in bottom right corner
+- [x] #2 Shows SPACE = toggle mode shortcut
+- [x] #3 Shows V = toggle camera shortcut
+- [x] #4 Subtle styling that doesn't distract
+- [x] #5 Text readable on any background
+- [x] #6 Panel can be dismissed or hidden
 <!-- AC:END -->
 
 ## Implementation Plan
