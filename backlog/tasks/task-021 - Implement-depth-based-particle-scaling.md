@@ -42,3 +42,13 @@ Use MediaPipe landmark z-values to scale particle formations based on distance f
 5. Verify TypeScript compiles with no errors
 6. Test builds successfully
 <!-- SECTION:PLAN:END -->
+
+## Implementation Notes
+
+<!-- SECTION:NOTES:BEGIN -->
+Created DepthScaling.ts module with exponential scaling formula.
+Updated HandDistribution.ts to use HAND_DEPTH_SCALING (0.5x-1.8x range).
+Updated FaceDistribution.ts with FACE_DEPTH_SCALING (0.7x-1.4x reduced sensitivity).
+Integrated depth-adjusted alpha calculation for farther = more transparent.
+TypeScript compiles clean, build succeeds.
+<!-- SECTION:NOTES:END -->
