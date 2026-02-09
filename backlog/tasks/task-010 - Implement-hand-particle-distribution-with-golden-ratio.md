@@ -1,10 +1,11 @@
 ---
 id: TASK-010
 title: Implement hand particle distribution with golden ratio
-status: To Do
-assignee: []
+status: In Progress
+assignee:
+  - '@copilot'
 created_date: '2026-01-23 07:50'
-updated_date: '2026-01-23 08:04'
+updated_date: '2026-02-09 05:56'
 labels:
   - particles
   - hands
