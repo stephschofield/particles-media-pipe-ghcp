@@ -29,3 +29,14 @@ Display a keyboard shortcuts panel in the bottom right corner showing available 
 - [ ] #5 Text readable on any background
 - [ ] #6 Panel can be dismissed or hidden
 <!-- AC:END -->
+
+## Implementation Plan
+
+<!-- SECTION:PLAN:BEGIN -->
+1. Create KeyboardShortcuts.tsx component with glassmorphism styling
+2. Position bottom-right with absolute positioning
+3. Show SPACE and V shortcuts with subtle styling
+4. Add dismiss functionality (X button or click)
+5. Export from components index
+6. Add to CanvasView in page.tsx
+<!-- SECTION:PLAN:END -->
