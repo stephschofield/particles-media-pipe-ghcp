@@ -5,7 +5,7 @@ status: In Progress
 assignee:
   - '@copilot'
 created_date: '2026-01-23 07:50'
-updated_date: '2026-02-09 06:02'
+updated_date: '2026-02-09 06:05'
 labels:
   - particles
   - face
@@ -23,19 +23,19 @@ Configure particle distribution for face with very tight 1-2px clustering for de
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
-- [ ] #1 Face particles clustered at 1-2px spread
-- [ ] #2 Nose particles pushed forward with depth boost
-- [ ] #3 Cheekbone particles show prominence
-- [ ] #4 Eye socket particles recessed for depth
-- [ ] #5 Dense mesh effect creates recognizable face shape
-- [ ] #6 468 landmarks properly weighted for distribution
-- [ ] #7 Face colored pink/magenta (#EC4899)
-- [ ] #8 Ultra-tight 1-2px clustering across all 468 landmarks
-- [ ] #9 Nose landmarks pushed forward with depth boost
-- [ ] #10 Cheekbone landmarks show prominence
-- [ ] #11 Eye socket landmarks recessed for depth
-- [ ] #12 4,000-6,000 particles for dense face mesh
-- [ ] #13 Creates recognizable facial features (eyes, nose, lips visible)
+- [x] #1 Face particles clustered at 1-2px spread
+- [x] #2 Nose particles pushed forward with depth boost
+- [x] #3 Cheekbone particles show prominence
+- [x] #4 Eye socket particles recessed for depth
+- [x] #5 Dense mesh effect creates recognizable face shape
+- [x] #6 468 landmarks properly weighted for distribution
+- [x] #7 Face colored pink/magenta (#EC4899)
+- [x] #8 Ultra-tight 1-2px clustering across all 468 landmarks
+- [x] #9 Nose landmarks pushed forward with depth boost
+- [x] #10 Cheekbone landmarks show prominence
+- [x] #11 Eye socket landmarks recessed for depth
+- [x] #12 4,000-6,000 particles for dense face mesh
+- [x] #13 Creates recognizable facial features (eyes, nose, lips visible)
 <!-- AC:END -->
 
 ## Implementation Plan
