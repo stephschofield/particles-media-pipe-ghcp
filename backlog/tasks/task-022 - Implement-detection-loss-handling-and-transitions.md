@@ -5,7 +5,7 @@ status: In Progress
 assignee:
   - '@copilot'
 created_date: '2026-01-23 08:04'
-updated_date: '2026-02-09 07:26'
+updated_date: '2026-02-09 07:32'
 labels:
   - particles
   - transitions
@@ -29,3 +29,14 @@ Handle smooth transitions when hands/face detection is lost or regained. Particl
 - [ ] #5 Smooth particle redistribution when hand count changes
 - [ ] #6 Idle state after 500ms+ of no detection
 <!-- AC:END -->
+
+## Implementation Plan
+
+<!-- SECTION:PLAN:BEGIN -->
+1. Created DetectionStateManager.ts - state machine for handling detection loss/regain transitions
+2. Modified ParticlePool.ts - added alpha multiplier support for smooth fade transitions
+3. Modified ParticleSystem.ts - integrated DetectionStateManager for coordinated transitions
+4. Modified ParticlePhysics.ts - added drift behavior for fading particles
+5. Updated index.ts to export new module
+6. Verified zero TypeScript errors
+<!-- SECTION:PLAN:END -->
