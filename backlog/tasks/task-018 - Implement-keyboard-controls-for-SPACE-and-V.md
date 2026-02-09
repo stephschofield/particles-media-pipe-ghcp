@@ -1,7 +1,7 @@
 ---
 id: TASK-018
 title: Implement keyboard controls for SPACE and V
-status: In Progress
+status: Done
 assignee:
   - '@copilot'
 created_date: '2026-01-23 07:51'
