@@ -5,7 +5,7 @@ status: In Progress
 assignee:
   - '@copilot'
 created_date: '2026-01-23 07:52'
-updated_date: '2026-02-09 07:17'
+updated_date: '2026-02-09 07:20'
 labels:
   - ui
   - feedback
@@ -23,18 +23,18 @@ Create a dynamic status indicator in the top right corner showing real-time dete
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
-- [ ] #1 Indicator positioned in top right
-- [ ] #2 Shows Loading... during MediaPipe init
-- [ ] #3 Shows detection status (hands/face count)
-- [ ] #4 Shows 'Show your hands' when nothing detected
-- [ ] #5 Smooth transitions between states
-- [ ] #6 Visual styling matches overall aesthetic
-- [ ] #7 Shows exact count: '2 hands + face detected' format
-- [ ] #8 Updates in real-time as detection changes
-- [ ] #9 Green dot indicator when actively detecting
-- [ ] #10 Positioned top right with glassmorphism style
-- [ ] #11 Shows 'Show your hands' when nothing detected for 2s
-- [ ] #12 Smooth text transitions without flicker
+- [x] #1 Indicator positioned in top right
+- [x] #2 Shows Loading... during MediaPipe init
+- [x] #3 Shows detection status (hands/face count)
+- [x] #4 Shows 'Show your hands' when nothing detected
+- [x] #5 Smooth transitions between states
+- [x] #6 Visual styling matches overall aesthetic
+- [x] #7 Shows exact count: '2 hands + face detected' format
+- [x] #8 Updates in real-time as detection changes
+- [x] #9 Green dot indicator when actively detecting
+- [x] #10 Positioned top right with glassmorphism style
+- [x] #11 Shows 'Show your hands' when nothing detected for 2s
+- [x] #12 Smooth text transitions without flicker
 <!-- AC:END -->
 
 ## Implementation Plan
