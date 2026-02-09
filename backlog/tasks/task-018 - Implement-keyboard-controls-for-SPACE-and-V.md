@@ -1,10 +1,11 @@
 ---
 id: TASK-018
 title: Implement keyboard controls for SPACE and V
-status: To Do
-assignee: []
+status: In Progress
+assignee:
+  - '@copilot'
 created_date: '2026-01-23 07:51'
-updated_date: '2026-01-23 07:53'
+updated_date: '2026-02-09 07:15'
 labels:
   - interaction
   - controls
