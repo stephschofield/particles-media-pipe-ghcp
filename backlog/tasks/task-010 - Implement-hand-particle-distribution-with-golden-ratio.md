@@ -49,3 +49,16 @@ Configure particle distribution for hands using golden ratio spiral for organic 
 6. Export HandDistribution from index.ts
 7. Test TypeScript compilation
 <!-- SECTION:PLAN:END -->
+
+## Implementation Notes
+
+<!-- SECTION:NOTES:BEGIN -->
+- Created HandDistribution.ts with golden ratio spiral distribution logic
+- Defined zone-specific spread: fingertips 1-2px, finger segments 3-5px, palm 8-12px
+- Set particle counts per zone: fingertip 35, fingerMid 45, fingerBase 50, palm 70
+- Total ~1000 particles per hand (within 800-1200 spec range)
+- Integrated calculateParticleSpread into ParticlePool.updateHandTargets
+- Verified left=blue #3B82F6, right=green #22C55E colors match spec
+- Exported HandDistribution module from particles/index.ts
+- TypeScript compilation passes, ESLint clean for modified files
+<!-- SECTION:NOTES:END -->
