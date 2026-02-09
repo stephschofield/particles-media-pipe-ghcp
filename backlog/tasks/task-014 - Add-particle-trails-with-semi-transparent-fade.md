@@ -5,7 +5,7 @@ status: In Progress
 assignee:
   - '@copilot'
 created_date: '2026-01-23 07:51'
-updated_date: '2026-02-09 07:00'
+updated_date: '2026-02-09 07:04'
 labels:
   - particles
   - effects
@@ -22,12 +22,12 @@ Implement particle trails that show movement history with semi-transparent fadin
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
-- [ ] #1 Each particle leaves a trail of previous positions
-- [ ] #2 Trail opacity fades from full to transparent
-- [ ] #3 Trail length configurable (5-10 positions)
-- [ ] #4 Performance maintained at 60fps with trails
-- [ ] #5 Trails enhance flowing liquid aesthetic
-- [ ] #6 Trail rendering uses efficient technique
+- [x] #1 Each particle leaves a trail of previous positions
+- [x] #2 Trail opacity fades from full to transparent
+- [x] #3 Trail length configurable (5-10 positions)
+- [x] #4 Performance maintained at 60fps with trails
+- [x] #5 Trails enhance flowing liquid aesthetic
+- [x] #6 Trail rendering uses efficient technique
 <!-- AC:END -->
 
 ## Implementation Plan
