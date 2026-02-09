@@ -1,10 +1,11 @@
 ---
 id: TASK-011
 title: Implement face particle distribution with tight clustering
-status: To Do
-assignee: []
+status: In Progress
+assignee:
+  - '@copilot'
 created_date: '2026-01-23 07:50'
-updated_date: '2026-01-23 08:04'
+updated_date: '2026-02-09 06:01'
 labels:
   - particles
   - face
