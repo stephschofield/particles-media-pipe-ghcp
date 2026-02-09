@@ -5,7 +5,7 @@ status: In Progress
 assignee:
   - '@copilot'
 created_date: '2026-01-23 07:50'
-updated_date: '2026-02-09 05:49'
+updated_date: '2026-02-09 05:55'
 labels:
   - particles
   - physics
@@ -22,18 +22,18 @@ Build the core particle system with STRICT landmark binding - particles ONLY exi
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
-- [ ] #1 Particle class with position, velocity, target properties
-- [ ] #2 Attraction force calculation toward landmarks
-- [ ] #3 Smooth velocity interpolation with damping
-- [ ] #4 Particles distribute evenly across visible landmarks
-- [ ] #5 Physics runs independently of render at fixed timestep
-- [ ] #6 Particles feel organic like flowing liquid
-- [ ] #7 Particles pre-allocated in Float32Array (never created/destroyed at runtime)
-- [ ] #8 Each particle statically bound to exactly one landmark index
-- [ ] #9 Zero stray particles - particles ONLY appear at detected landmarks
-- [ ] #10 Double-buffer interpolation smooths 30fps detection to 60fps render
-- [ ] #11 Particles set to alpha=0 when their landmark is not detected
-- [ ] #12 WebGL 2 instancing renders all particles in single draw call
+- [x] #1 Particle class with position, velocity, target properties
+- [x] #2 Attraction force calculation toward landmarks
+- [x] #3 Smooth velocity interpolation with damping
+- [x] #4 Particles distribute evenly across visible landmarks
+- [x] #5 Physics runs independently of render at fixed timestep
+- [x] #6 Particles feel organic like flowing liquid
+- [x] #7 Particles pre-allocated in Float32Array (never created/destroyed at runtime)
+- [x] #8 Each particle statically bound to exactly one landmark index
+- [x] #9 Zero stray particles - particles ONLY appear at detected landmarks
+- [x] #10 Double-buffer interpolation smooths 30fps detection to 60fps render
+- [x] #11 Particles set to alpha=0 when their landmark is not detected
+- [x] #12 WebGL 2 instancing renders all particles in single draw call
 <!-- AC:END -->
 
 ## Implementation Plan
