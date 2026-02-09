@@ -54,3 +54,23 @@ Skips events when focus is in text input fields.
 Cleanly removes event listener on unmount.
 Integrated in page.tsx CanvasView.
 <!-- SECTION:NOTES:END -->
+
+## Final Summary
+
+<!-- SECTION:FINAL_SUMMARY:BEGIN -->
+Implemented keyboard controls for particle system.
+
+Changes:
+- Created src/lib/useKeyboardControls.ts hook
+- SPACE key toggles between Attract and Repel physics modes
+- V key cycles through color themes (rainbow, fire, ocean, galaxy, matrix)
+- Prevents default on SPACE to avoid page scroll
+- Skips key events when focus is in input fields (INPUT, TEXTAREA, contentEditable)
+- Window-level listener works regardless of focus state
+- Clean event listener removal on unmount
+- Added togglePhysicsMode callback in page.tsx
+- Integrated hook in CanvasView component
+
+Note: Task mentions V for camera toggle but user request specifies V for theme cycling - implemented theme cycling per user instructions.
+Zero TypeScript errors.
+<!-- SECTION:FINAL_SUMMARY:END -->
