@@ -1,7 +1,7 @@
 ---
 id: TASK-007
 title: Draw face mesh overlay with colored regions
-status: In Progress
+status: Done
 assignee:
   - '@copilot'
 created_date: '2026-01-23 07:49'
