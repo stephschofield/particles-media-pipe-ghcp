@@ -1,10 +1,11 @@
 ---
 id: TASK-017
 title: Add keyboard shortcuts panel in bottom right
-status: To Do
-assignee: []
+status: In Progress
+assignee:
+  - '@copilot'
 created_date: '2026-01-23 07:51'
-updated_date: '2026-01-23 07:53'
+updated_date: '2026-02-09 07:14'
 labels:
   - ui
   - help
