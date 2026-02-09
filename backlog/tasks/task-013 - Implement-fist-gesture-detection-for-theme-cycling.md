@@ -1,10 +1,11 @@
 ---
 id: TASK-013
 title: Implement fist gesture detection for theme cycling
-status: To Do
-assignee: []
+status: In Progress
+assignee:
+  - '@copilot'
 created_date: '2026-01-23 07:51'
-updated_date: '2026-01-23 07:52'
+updated_date: '2026-02-09 06:54'
 labels:
   - gestures
   - interaction
@@ -29,3 +30,14 @@ Detect when user makes a fist gesture using hand landmark positions. When fist i
 - [ ] #5 Visual feedback when fist detected
 - [ ] #6 No false positives during normal hand movement
 <!-- AC:END -->
+
+## Implementation Plan
+
+<!-- SECTION:PLAN:BEGIN -->
+1. Create src/lib/gestures.ts - Pure fist detection functions
+2. Create src/lib/useGestureDetection.ts - React hook with debouncing
+3. Integrate hook into CanvasView in page.tsx
+4. Add visual feedback for theme change
+5. Test with both hands
+6. Verify no false positives
+<!-- SECTION:PLAN:END -->
