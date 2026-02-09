@@ -62,3 +62,25 @@ Create Attract Mode toggle button in top left with glassmorphism styling. Button
 - ParticleCanvas physicsMode prop connected
 - Note: AC #10 (Hide Camera button) not in scope per user guidance
 <!-- SECTION:NOTES:END -->
+
+## Final Summary
+
+<!-- SECTION:FINAL_SUMMARY:BEGIN -->
+Implemented mode toggle buttons in top-left of the canvas view.
+
+Changes:
+- Created src/components/ModeToggle.tsx - client component with Attract/Repel buttons
+- Glassmorphism styling matching UX spec: blur(10px), rgba(255,255,255,0.05) bg
+- Teal (#14B8A6) accent for active Attract mode, orange (#F97316) for Repel
+- Full accessibility: aria-pressed, aria-label, role=group
+- Smooth CSS transitions on hover/click (duration-150 ease-out)
+- Updated src/components/index.ts to export ModeToggle
+- Integrated into page.tsx with useState for physicsMode
+- Connected to ParticleCanvas physicsMode prop
+
+Verification:
+- npx tsc --noEmit passes with zero errors
+- Buttons toggle correctly and update particle physics mode
+
+Note: Hide Camera button (AC #10) deferred per implementation guidance scope.
+<!-- SECTION:FINAL_SUMMARY:END -->
