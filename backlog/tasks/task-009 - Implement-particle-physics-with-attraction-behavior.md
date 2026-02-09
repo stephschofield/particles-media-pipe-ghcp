@@ -5,7 +5,7 @@ status: In Progress
 assignee:
   - '@copilot'
 created_date: '2026-01-23 07:50'
-updated_date: '2026-02-09 05:48'
+updated_date: '2026-02-09 05:49'
 labels:
   - particles
   - physics
@@ -35,3 +35,15 @@ Build the core particle system with STRICT landmark binding - particles ONLY exi
 - [ ] #11 Particles set to alpha=0 when their landmark is not detected
 - [ ] #12 WebGL 2 instancing renders all particles in single draw call
 <!-- AC:END -->
+
+## Implementation Plan
+
+<!-- SECTION:PLAN:BEGIN -->
+1. Create src/core/particles/ module structure with types
+2. Implement ParticlePool - pre-allocated Float32Arrays for 15K particles
+3. Implement LandmarkInterpolator - double-buffer for 30fps→60fps smoothing
+4. Implement ParticlePhysics - fixed timestep with attraction force + damping
+5. Implement ParticleSystem - main coordinator binding particles to landmarks
+6. Update ParticleCanvas to use new particle system
+7. Test and verify all acceptance criteria
+<!-- SECTION:PLAN:END -->
