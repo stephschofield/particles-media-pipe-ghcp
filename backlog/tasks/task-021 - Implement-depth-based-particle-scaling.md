@@ -1,9 +1,11 @@
 ---
 id: TASK-021
 title: Implement depth-based particle scaling
-status: To Do
-assignee: []
+status: In Progress
+assignee:
+  - '@copilot'
 created_date: '2026-01-23 08:04'
+updated_date: '2026-02-09 07:22'
 labels:
   - particles
   - depth
