@@ -40,3 +40,15 @@ Handle smooth transitions when hands/face detection is lost or regained. Particl
 5. Updated index.ts to export new module
 6. Verified zero TypeScript errors
 <!-- SECTION:PLAN:END -->
+
+## Implementation Notes
+
+<!-- SECTION:NOTES:BEGIN -->
+Implementation complete:
+- Created DetectionStateManager with 5 states: Detected, Occluded, FadingOut, Hidden, FadingIn
+- Timing constants: 200ms fadeout, 300ms occlusion threshold, 100ms fadein, 500ms idle threshold, 70% occluded opacity
+- ParticlePool now tracks base alpha separately from multiplied alpha for smooth transitions
+- ParticlePhysics adds drift behavior for fading particles (gentle noise-based movement instead of freeze)
+- ParticleSystem coordinates state updates and applies alpha multipliers per frame
+- Smooth easing curves: easeInCubic for fadeout (slow start, fast end), easeOutCubic for fadein (fast start, slow end)
+<!-- SECTION:NOTES:END -->
